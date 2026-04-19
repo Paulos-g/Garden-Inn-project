@@ -1,0 +1,89 @@
+:root {
+  --nav-color: #346739;
+  --btn-clor: #2d6a4f;
+  --links-color: #1b4332;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+.Nav-container {
+  position: sticky;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  z-index: 1000;
+  top: 0;
+  height: 100px;
+  margin-top: -30px;
+}
+.gardenLogo {
+  height: 150px; /* adjust between 40–60px */
+  width: auto;
+}
+.Nav-container li {
+  list-style: none;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: var(--links-color);
+  position: relative;
+}
+.nav-links li a::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 0%;
+  transition: width 0.3s ease;
+  height: 2px;
+  bottom: -5px;
+  background-color: #3b8e23;
+}
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  background-color: var(--btn-clor);
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  color: white;
+  border: none;
+}
+.btn:hover {
+  background-color: #40916c;
+}
+.bookBtn {
+  border-radius: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  color: white;
+  border: none;
+  background-color: #12572e;
+  color: white;
+  font-size: 1.2rem;
+  border: 2px solid #d4af37;
+}
+.bookBtn:hover {
+  background-color: #3b8e23;
+}

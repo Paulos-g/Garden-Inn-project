@@ -1,0 +1,77 @@
+:root {
+  --bg-main: #f8f9fa;
+  --text-dark: #1b4332;
+  --text-light: #6c757d;
+  --bg-section: #e9f5ef;
+  --accent: #f4a261;
+  --nav-color: #209c2c;
+}
+body {
+  background-color: var(--bg-main);
+  font-family: "Poppins", sans-serif;
+  background-image:;
+}
+* {
+  scroll-behavior: smooth;
+}
+.hero {
+  height: 100vh;
+  background: url("./assets/garden\ bldg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero + h2 {
+  margin-top: 50px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+.descriptContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+}
+.description {
+  color: var(--nav-color);
+  text-align: justify;
+  width: 500px;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+.receptionImg {
+  width: 600px;
+  height: 300px;
+}
+.icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 50px;
+  margin-left: 300px;
+}
+.icon-container {
+  text-align: center;
+  height: 110px;
+  width: 130px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.icon-container i {
+  color: var(--nav-color);
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.icon-container:hover {
+  transform: translateY(-3px);
+}
+.icons + h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-top: 30px;
+}
