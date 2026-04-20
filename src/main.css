@@ -75,3 +75,36 @@ body {
   text-align: center;
   margin-top: 30px;
 }
+.card-container {
+  height: 500px;
+  width: 400px;
+  background-color: rgba(118, 116, 116, 0.195);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in;
+  border: 2px solid gold;
+  border-radius: 10px;
+}
+.card-container:hover {
+  transform: translateY(-2px);
+}
+.card-container img {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+.card-text h2 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card {
+  display: flex;
+  justify-content: space-around;
+}
+.cardBtn {
+  background-color: red;
+}

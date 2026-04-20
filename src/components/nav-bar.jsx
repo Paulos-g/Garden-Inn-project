@@ -31,7 +31,7 @@ function Nav() {
             <a href="#Garden Brau">Garden Brau</a>
           </li>
         </ul>
-        <button className="bookBtn">Book now</button>
+        <Button text="Book now" />
       </div>
     </>
   );

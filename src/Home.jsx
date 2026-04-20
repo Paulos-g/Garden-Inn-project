@@ -5,8 +5,11 @@ import GardenImage from "./components/img";
 import Reception from "./assets/reception.png";
 import Service from "./components/ServicesIcons";
 import Image from "./components/Image";
-// import BarImg from "./assets/BarImg.jpg";
-import RestaurantImg from "./assets/restaurant.jpg";
+import Card from "./components/card";
+import doubleRoom from "./assets/Double_room.jpg";
+import twinRoom from "./assets/Twin_room.jpg";
+import singleRoom from "./assets/Single_room.webp";
+import Button from "./components/Button";
 
 function Home() {
   return (
@@ -32,8 +35,32 @@ function Home() {
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
       <h2>Our Accommodations</h2>
-      {/* <Image imgURL={BarImg} alt="image of a bar" /> */}
-      {/* <Image imgURL={RestaurantImg} alt="iage of restaurant" /> */}
+      <div className="card">
+        <Card
+          ImgUrl={doubleRoom}
+          alt="Double room"
+          heading="Double room"
+          text="“Sophisticated king-sized room with one plush king bed, high-quality
+         linens, soft lighting, and tasteful contemporary design. A calm, stylish 
+         space equipped with essential modern amenities for a relaxing stay"
+        />
+        <Card
+          ImgUrl={twinRoom}
+          alt="twin room"
+          heading="Twin room"
+          text="Well-appointed twin classic room with two single beds,
+         quality bedding, soft lighting, and a calm, functional design."
+        />
+        <Card
+          ImgUrl={singleRoom}
+          alt="single rooom"
+          heading="Single room"
+          text="Elegant single room featuring a comfortable single bed
+        , premium linens, warm ambient lighting, and refined décor. Includes
+         air conditioning,
+         high-speed WiFi, and a private bathroom for a relaxing stay"
+        />
+      </div>
     </>
   );
 }
