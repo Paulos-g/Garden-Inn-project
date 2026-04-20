@@ -66,6 +66,7 @@ function Home() {
          high-speed WiFi, and a private bathroom for a relaxing stay"
         />
       </div>
+      <Header text="Our Services" />
     </>
   );
 }
