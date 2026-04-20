@@ -10,16 +10,21 @@ import doubleRoom from "./assets/Double_room.jpg";
 import twinRoom from "./assets/Twin_room.jpg";
 import singleRoom from "./assets/Single_room.webp";
 import Button from "./components/Button";
+import Header from "./components/Headers";
 
 function Home() {
   return (
     <>
       <Nav />
       <section className="hero"></section>
-      <h2>
-        Welcome To <br />
-        Garden Inn Appartments & Hotels
-      </h2>
+      <Header
+        text={
+          <>
+            Welcome to <br /> Garden Inn Appartments & Hotels
+          </>
+        }
+      />
+
       <div className="descriptContainer">
         <Description />
         <img className="receptionImg" src={Reception} alt="reception image" />
@@ -34,7 +39,7 @@ function Home() {
         <Service icon="fa-solid fa-bus" title="24/7 shuttle service" />
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
-      <h2>Our Accommodations</h2>
+      <Header text="Our Accommodations" />
       <div className="card">
         <Card
           ImgUrl={doubleRoom}
