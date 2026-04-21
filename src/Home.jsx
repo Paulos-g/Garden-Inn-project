@@ -24,10 +24,11 @@ function Home() {
           </>
         }
       />
-
-      <div className="descriptContainer">
-        <Description />
-        <img className="receptionImg" src={Reception} alt="reception image" />
+      <div className="welcomeContainer">
+        <div className="descriptContainer">
+          <Description />
+          <img className="receptionImg" src={Reception} alt="reception image" />
+        </div>
       </div>
       <div className="icons">
         <Service icon="fa-solid fa-wifi" title="High speed internet" />
