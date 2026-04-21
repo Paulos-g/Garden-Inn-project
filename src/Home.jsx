@@ -11,6 +11,8 @@ import twinRoom from "./assets/Twin_room.jpg";
 import singleRoom from "./assets/Single_room.webp";
 import Button from "./components/Button";
 import Header from "./components/Headers";
+import Bar from "./assets/BarImage.jpg";
+import restaurant from "./assets/restaurant.jpg";
 
 function Home() {
   return (
@@ -68,6 +70,23 @@ function Home() {
         />
       </div>
       <Header text="Our Services" />
+      <div className="card">
+        <Card
+          ImgUrl={Bar}
+          alt="restaurant uimage"
+          heading="Garden Brau"
+          text="Enjoy our onsite brewey which we have been making for over 20 years,
+      with our best chemists experience luxury on its another form"
+        />
+
+        <Card
+          ImgUrl={restaurant}
+          alt="restaurant image"
+          heading="our restaurant"
+          text="Experience Meals in their organic nature, where every dish served with love
+      and companinon, Try our famous chicken roast with rice"
+        />
+      </div>
     </>
   );
 }

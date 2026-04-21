@@ -14,14 +14,13 @@ body {
 }
 .Nav-container {
   position: sticky;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   z-index: 1000;
   top: 0;
   height: 100px;
