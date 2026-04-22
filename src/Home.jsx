@@ -13,6 +13,8 @@ import Button from "./components/Button";
 import Header from "./components/Headers";
 import Bar from "./assets/BarImage.jpg";
 import restaurant from "./assets/restaurant.jpg";
+import Check from "./components/checkinout";
+import Icon from "./components/Icons";
 
 function Home() {
   return (
@@ -39,6 +41,7 @@ function Home() {
           <img className="receptionImg" src={Reception} alt="reception image" />
         </div>
       </div> */}
+      <Check />
       <div className="icons">
         <Service icon="fa-solid fa-wifi" title="High speed internet" />
         <Service icon="fa-solid fa-bed" title="Comfy bed" />
@@ -49,6 +52,7 @@ function Home() {
         <Service icon="fa-solid fa-bus" title="24/7 shuttle service" />
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
+
       <Header text="Our Accommodations" />
       <div className="card">
         <Card
@@ -94,6 +98,7 @@ function Home() {
       and companinon, Try our famous chicken roast with rice"
         />
       </div>
+      <div className="check"></div>
     </>
   );
 }
