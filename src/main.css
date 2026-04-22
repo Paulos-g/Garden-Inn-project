@@ -185,3 +185,11 @@ body {
 .room-container {
   display: flex;
 }
+.viewBtn {
+  color: var(--nav-color);
+
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  width: 50px;
+}

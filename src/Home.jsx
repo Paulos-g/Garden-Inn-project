@@ -63,7 +63,7 @@ function Home() {
             comfort and relaxation
           </p>
           <button className="viewBtn">
-            View All rooms <Icon icon="fa-regular fa-arrow-right" />
+            View All rooms <Icon icon="fa-solid fa-arrow-right" />{" "}
           </button>
         </div>
         <div className="card">
