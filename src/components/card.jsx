@@ -8,7 +8,6 @@ function Card(props) {
       <div className="card-text">
         <h2>{props.heading}</h2>
         <p>{props.text}</p>
-        <Button text="Learn more" className="cardBtn" />
       </div>
     </div>
   );

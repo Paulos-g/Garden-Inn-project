@@ -22,7 +22,7 @@ function Home() {
       <Nav />
       <section className="hero">
         <div className="hero-text">
-          <h3 className="">Welcome to Garden Inn</h3>
+          <h3>Welcome to Garden Inn</h3>
           <h1>
             Comfort Stay <br />
             in the Heart of Nature
@@ -52,34 +52,48 @@ function Home() {
         <Service icon="fa-solid fa-bus" title="24/7 shuttle service" />
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
-
-      <Header text="Our Accommodations" />
-      <div className="card">
-        <Card
-          ImgUrl={doubleRoom}
-          alt="Double room"
-          heading="Double room"
-          text="“Sophisticated king-sized room with one plush king bed, high-quality
+      <div className="room-container">
+        <div className="room-text">
+          <h3>Our Rooms</h3>
+          <h2>
+            Rooms & Suites <br /> Designed for You
+          </h2>
+          <p>
+            From cozy rooms to spacious suits, Every space is crafted for your
+            comfort and relaxation
+          </p>
+          <button className="viewBtn">
+            View All rooms <Icon icon="fa-regular fa-arrow-right" />
+          </button>
+        </div>
+        <div className="card">
+          <Card
+            ImgUrl={doubleRoom}
+            alt="Double room"
+            heading="Double room"
+            text="“Sophisticated king-sized room with one plush king bed, high-quality
          linens, soft lighting, and tasteful contemporary design. A calm, stylish 
          space equipped with essential modern amenities for a relaxing stay"
-        />
-        <Card
-          ImgUrl={twinRoom}
-          alt="twin room"
-          heading="Twin room"
-          text="Well-appointed twin classic room with two single beds,
+          />
+          <Card
+            ImgUrl={twinRoom}
+            alt="twin room"
+            heading="Twin room"
+            text="Well-appointed twin classic room with two single beds,
          quality bedding, soft lighting, and a calm, functional design."
-        />
-        <Card
-          ImgUrl={singleRoom}
-          alt="single rooom"
-          heading="Single room"
-          text="Elegant single room featuring a comfortable single bed
+          />
+          <Card
+            ImgUrl={singleRoom}
+            alt="single rooom"
+            heading="Single room"
+            text="Elegant single room featuring a comfortable single bed
         , premium linens, warm ambient lighting, and refined décor. Includes
          air conditioning,
          high-speed WiFi, and a private bathroom for a relaxing stay"
-        />
+          />
+        </div>
       </div>
+
       <Header text="Our Services" />
       <div className="card">
         <Card
@@ -98,7 +112,6 @@ function Home() {
       and companinon, Try our famous chicken roast with rice"
         />
       </div>
-      <div className="check"></div>
     </>
   );
 }
