@@ -14,11 +14,39 @@ body {
   scroll-behavior: smooth;
 }
 .hero {
-  height: 120vh;
-  background: url("./assets/garden\ bldg.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  height: 100vh;
+}
+.hero-text {
+  width: 400px;
+  padding: 80px;
+  background: #f8f6f2; /* light luxury */
+  z-index: 2;
+}
+.hero-text h3 {
+  font-size: 1rem;
+  color: var(--nav-color);
+}
+.hero-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.3rem;
+}
+.hero-text p {
+  color: gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.hero-image {
+  flex: 1;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(249, 250, 246, 1) 0%,
+      /* 1. Starts solid off-white */ rgba(249, 250, 246, 1) 5%,
+      /* 2. Stays solid to cover the text area */ rgba(249, 250, 246, 0) 65%
+        /* 3. Fades to completely transparent */
+    ),
+    url("./assets/garden\ bldg.webp");
 }
 .heading {
   margin-top: 50px;

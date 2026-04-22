@@ -18,20 +18,27 @@ function Home() {
   return (
     <>
       <Nav />
-      <section className="hero"></section>
-      <Header
-        text={
-          <>
-            Welcome to <br /> Garden Inn Appartments & Hotels
-          </>
-        }
-      />
-      <div className="welcomeContainer">
+      <section className="hero">
+        <div className="hero-text">
+          <h3 className="">Welcome to Garden Inn</h3>
+          <h1>
+            Comfort Stay <br />
+            in the Heart of Nature
+          </h1>
+          <p>
+            Experience warm hospitality, modern comfort, and peacefull
+            environment for truly, memorable stay
+          </p>
+          <Button text="Explore Rooms" />
+        </div>
+        <div className="hero-image"></div>
+      </section>
+      {/* <div className="welcomeContainer">
         <div className="descriptContainer">
           <Description />
           <img className="receptionImg" src={Reception} alt="reception image" />
         </div>
-      </div>
+      </div> */}
       <div className="icons">
         <Service icon="fa-solid fa-wifi" title="High speed internet" />
         <Service icon="fa-solid fa-bed" title="Comfy bed" />
