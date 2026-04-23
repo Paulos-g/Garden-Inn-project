@@ -21,7 +21,7 @@ body {
 .hero-text {
   width: 400px;
   padding: 80px;
-  background: #f8f6f2; /* light luxury */
+  /* background: #f8f6f2;  */
   z-index: 2;
 }
 .hero-text h3 {
