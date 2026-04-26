@@ -21,12 +21,11 @@ body {
 .hero-text {
   width: 400px;
   padding: 80px;
-  /* background: #f8f6f2;  */
   z-index: 2;
 }
 .hero-text h3 {
   font-size: 1rem;
-  color: var(--nav-color);
+  color: var(--accent);
 }
 .hero-text h1 {
   font-family: "Playfair Display", serif;
@@ -100,22 +99,20 @@ body {
   transform: translateY(-3px);
 }
 .card-container {
-  height: 500px;
-  width: 400px;
-  background-color: rgba(118, 116, 116, 0.195);
+  height: 450px;
+  width: 350px;
+  background-color: var(--bg-main);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in;
   /* border: 2px solid gold; */
   border-radius: 10px;
-  background-image: url("./assets/gold_leaf.jpg");
-  background-repeat: no-repeat;
-  background-size: auto;
+  cursor: pointer;
 }
 .card-container:hover {
   transform: translateY(-2px);
 }
 .card-container img {
-  width: 400px;
+  width: 350px;
   height: 300px;
   border-radius: 10px;
 }
@@ -125,7 +122,7 @@ body {
 }
 .card-text h2 {
   font-family: "Playfair Display", serif;
-  text-align: center;
+  font-size: 1.4rem;
   margin-bottom: 20px;
 }
 .card {
@@ -133,6 +130,7 @@ body {
   justify-content: space-around;
   margin-top: 20px;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .special-text {
@@ -192,4 +190,15 @@ body {
   background: none;
   font-size: 0.9rem;
   width: 50px;
+}
+.price-text {
+  font-size: 0.9rem;
+  color: gray;
+}
+.heading-price {
+  display: flex;
+  gap: 50px;
+}
+.heading-price p {
+  margin-top: 7px;
 }

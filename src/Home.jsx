@@ -52,66 +52,77 @@ function Home() {
         <Service icon="fa-solid fa-bus" title="24/7 shuttle service" />
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
-      <div className="room-container">
-        <div className="room-text">
-          <h3>Our Rooms</h3>
-          <h2>
-            Rooms & Suites <br /> Designed for You
-          </h2>
-          <p>
-            From cozy rooms to spacious suits, Every space is crafted for your
-            comfort and relaxation
-          </p>
-          <button className="viewBtn">
-            View All rooms <Icon icon="fa-solid fa-arrow-right" />{" "}
-          </button>
+      <section id="Rooms">
+        <div className="room-container">
+          <div className="room-text">
+            <h3>Our Rooms</h3>
+            <h2>
+              Rooms & Suites <br /> Designed for You
+            </h2>
+            <p>
+              From cozy rooms to spacious suits, Every space is crafted for your
+              comfort and relaxation
+            </p>
+            <button className="viewBtn">
+              View All rooms <Icon icon="fa-solid fa-arrow-right" />{" "}
+            </button>
+          </div>
+          <div className="card">
+            <Card
+              ImgUrl={doubleRoom}
+              alt="Double room"
+              heading="Double room"
+              price="Starting from $150/ night"
+              text="Sophisticated king-sized room with one plush king bed, high-quality
+         linens"
+            />
+            <Card
+              ImgUrl={twinRoom}
+              alt="twin room"
+              heading="Twin room"
+              price="Starting from $120/ night"
+              text="Well-appointed twin classic room with two single beds,
+         quality bedding"
+            />
+            <Card
+              ImgUrl={singleRoom}
+              alt="single rooom"
+              heading="Single room"
+              price="Starting from  $100/ night"
+              text="Elegant single room featuring a comfortable single bed and premium linens"
+            />
+          </div>
         </div>
-        <div className="card">
-          <Card
-            ImgUrl={doubleRoom}
-            alt="Double room"
-            heading="Double room"
-            text="“Sophisticated king-sized room with one plush king bed, high-quality
-         linens, soft lighting, and tasteful contemporary design. A calm, stylish 
-         space equipped with essential modern amenities for a relaxing stay"
-          />
-          <Card
-            ImgUrl={twinRoom}
-            alt="twin room"
-            heading="Twin room"
-            text="Well-appointed twin classic room with two single beds,
-         quality bedding, soft lighting, and a calm, functional design."
-          />
-          <Card
-            ImgUrl={singleRoom}
-            alt="single rooom"
-            heading="Single room"
-            text="Elegant single room featuring a comfortable single bed
-        , premium linens, warm ambient lighting, and refined décor. Includes
-         air conditioning,
-         high-speed WiFi, and a private bathroom for a relaxing stay"
-          />
-        </div>
-      </div>
+      </section>
+      <br />
+      <Header text="Step Into Relaxation & Flavor" />
+      <section id="Restaurant Service">
+        <div className="room-container">
+          <div className="room-text">
+            <h3>Our services</h3>
+            <h2>Luxury Bar & Restaurants for Your Stay.</h2>
+            <p>From Our Exclusive bar into Spacious restaurant classy vibes</p>
+          </div>
 
-      <Header text="Our Services" />
-      <div className="card">
-        <Card
-          ImgUrl={Bar}
-          alt="restaurant uimage"
-          heading="Garden Brau"
-          text="Enjoy our onsite brewey which we have been making for over 20 years,
+          <div className="card">
+            <Card
+              ImgUrl={Bar}
+              alt="restaurant uimage"
+              heading="Garden Brau"
+              text="Enjoy our onsite brewey which we have been making for over 20 years,
       with our best chemists experience luxury on its another form"
-        />
+            />
 
-        <Card
-          ImgUrl={restaurant}
-          alt="restaurant image"
-          heading="our restaurant"
-          text="Experience Meals in their organic nature, where every dish served with love
+            <Card
+              ImgUrl={restaurant}
+              alt="restaurant image"
+              heading="Our restaurant"
+              text="Experience Meals in their organic nature, where every dish served with love
       and companinon, Try our famous chicken roast with rice"
-        />
-      </div>
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

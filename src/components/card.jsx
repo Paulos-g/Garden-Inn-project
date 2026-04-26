@@ -6,7 +6,11 @@ function Card(props) {
     <div className="card-container">
       <img src={props.ImgUrl} alt="" />
       <div className="card-text">
-        <h2>{props.heading}</h2>
+        <div className="heading-price">
+          <h2>{props.heading}</h2>
+          <p className="price-text">{props.price}</p>
+        </div>
+
         <p>{props.text}</p>
       </div>
     </div>
