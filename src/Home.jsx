@@ -52,6 +52,7 @@ function Home() {
         <Service icon="fa-solid fa-bus" title="24/7 shuttle service" />
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
+      <Header text="Your Stay Begins Here" />
       <section id="Rooms">
         <div className="room-container">
           <div className="room-text">
