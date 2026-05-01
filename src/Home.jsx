@@ -15,6 +15,7 @@ import Bar from "./assets/BarImage.jpg";
 import restaurant from "./assets/restaurant.jpg";
 import Check from "./components/checkinout";
 import Icon from "./components/Icons";
+import Machine from "./assets/machineimage.png";
 
 function Home() {
   return (
@@ -53,6 +54,11 @@ function Home() {
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
       <Header text="Your Stay Begins Here" />
+      <div className="fancy-divider">
+        <span></span>
+        <Icon icon="fa-solid fa-leaf" className="gold-icon" />
+        <span></span>
+      </div>
       <section id="Rooms">
         <div className="room-container">
           <div className="room-text">
@@ -72,7 +78,7 @@ function Home() {
             <Card
               ImgUrl={doubleRoom}
               alt="Double room"
-              heading="Double room"
+              heading="Double Room"
               price="Starting from $150/ night"
               text="Sophisticated king-sized room with one plush king bed, high-quality
          linens"
@@ -96,8 +102,15 @@ function Home() {
         </div>
       </section>
       <br />
+      <section id="Restaurant-Service"></section>
       <Header text="Step Into Relaxation & Flavor" />
-      <section id="Restaurant Service">
+      <div className="fancy-divider">
+        <span></span>
+        <Icon icon="fa-solid fa-leaf" className="gold-icon" />
+        <span></span>
+      </div>
+
+      <section id="Restaurant-Service">
         <div className="room-container">
           <div className="room-text">
             <h3>Our services</h3>
@@ -106,24 +119,68 @@ function Home() {
           </div>
 
           <div className="card">
-            <Card
-              ImgUrl={Bar}
-              alt="restaurant uimage"
-              heading="Garden Brau"
-              text="Enjoy our onsite brewey which we have been making for over 20 years,
-      with our best chemists experience luxury on its another form"
-            />
+            <div className="romms-partion">
+              <Card
+                ImgUrl={Bar}
+                alt="restaurant uimage"
+                heading={
+                  <>
+                    Garden Brau
+                    <Icon
+                      icon="fa-solid fa-beer-mug-empty"
+                      className="beer-icon"
+                    />
+                  </>
+                }
+                text="Enjoy our onsite brewey which we have been making for over 20 years,
+        with our best chemists experience luxury on its another form"
+              />
 
-            <Card
-              ImgUrl={restaurant}
-              alt="restaurant image"
-              heading="Our restaurant"
-              text="Experience Meals in their organic nature, where every dish served with love
-      and companinon, Try our famous chicken roast with rice"
-            />
+              <Card
+                ImgUrl={restaurant}
+                alt="restaurant image"
+                heading="Our restaurant"
+                text="Experience Meals in their organic nature, where every dish served with love
+        and companinon, Try our famous chicken roast with rice"
+              />
+            </div>
           </div>
         </div>
       </section>
+      <Header text="Crafted In House.Perfected In Taste" />
+      <div className="fancy-divider">
+        <span></span>
+        <Icon icon="fa-solid fa-leaf" className="gold-icon" />
+        <span></span>
+      </div>
+      <div className="beer-container">
+        <Image imgURL={Machine} className="machine-image" />
+        <Header text="Brewed Here" className="brewText" />
+        <div className="fancy-divider">
+          <span></span>
+          <Icon icon="fa-solid fa-leaf" className="gold-icon" />
+          <span></span>
+        </div>
+
+        <p className="brewDescription">
+          Welcome to a stay where comfort meets craftsmanship. Our hotel is
+          renowned for its locally brewed beer, carefully crafted by expert
+          brewers with decades of experience. Each sip reflects tradition,
+          quality, and passion, bringing you an authentic taste of the region.
+          Relax in our cozy rooms after enjoying a refreshing glass straight
+          from our in-house brewery. The aroma of freshly brewed beer fills the
+          atmosphere, creating a unique and inviting experience for every guest.
+          Whether you’re here to unwind or explore, our expert team ensures
+          every brew is perfected to delight your senses. At our hotel, great
+          hospitality and exceptional beer come together in one unforgettable
+          experience.
+        </p>
+        <div className="beerIcons">
+          <Icon icon="fa-solid fa-wheat-awn" className="Wheat-icon" />
+          <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
+          <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
+        </div>
+      </div>
     </>
   );
 }

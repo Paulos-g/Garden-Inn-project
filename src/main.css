@@ -185,14 +185,13 @@ body {
 }
 .viewBtn {
   color: var(--nav-color);
-
   border: none;
   background: none;
   font-size: 0.9rem;
   width: 50px;
 }
 .price-text {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: gray;
 }
 .heading-price {
@@ -201,4 +200,72 @@ body {
 }
 .heading-price p {
   margin-top: 7px;
+}
+.heading-price h2 {
+  font-size: 1.4rem;
+  color: var(--nav-color);
+}
+.romms-partion {
+  display: flex;
+  justify-content: space-around;
+  gap: 200px;
+}
+.gold-icon {
+  text-align: center;
+}
+.fancy-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.fancy-divider span {
+  width: 70px;
+  height: 2px;
+  background: #d4a24c;
+  border-radius: 10px;
+}
+
+.leaf-icon {
+  color: #d4a24c;
+  font-size: 14px;
+}
+.line {
+  width: 80px;
+  height: 10px;
+  border-radius: 10px;
+  color: var(--accent);
+}
+.beer-icon {
+  color: red;
+  font-size: 1rem;
+}
+.machine-image {
+  width: 950px;
+  height: 600px;
+  margin: auto;
+  float: left;
+}
+.brewDescription {
+  color: gray;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.wheatContainer {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: var(--box-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.Wheat-icon {
+  color: red;
+}
+.beerIcons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
