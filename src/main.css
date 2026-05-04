@@ -211,7 +211,7 @@ body {
   gap: 200px;
 }
 .gold-icon {
-  text-align: center;
+  color: #d4a24c;
 }
 .fancy-divider {
   display: flex;
@@ -249,7 +249,7 @@ body {
 }
 .brewDescription {
   color: gray;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
 .wheatContainer {
@@ -268,4 +268,22 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+.text-box {
+  background-color: var(--box-color);
+  border: 2px solid gold;
+  width: fit-content;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.text-box p {
+  color: var(--nav-color);
+}
+.beer-container {
+  display: flex;
+}
+.text-box-container {
+  display: flex;
+  justify-content: space-between;
 }

@@ -16,6 +16,8 @@ import restaurant from "./assets/restaurant.jpg";
 import Check from "./components/checkinout";
 import Icon from "./components/Icons";
 import Machine from "./assets/machineimage.png";
+import Fancy from "./components/FancyIcon";
+import TextBox from "./components/Textbox";
 
 function Home() {
   return (
@@ -36,12 +38,6 @@ function Home() {
         </div>
         <div className="hero-image"></div>
       </section>
-      {/* <div className="welcomeContainer">
-        <div className="descriptContainer">
-          <Description />
-          <img className="receptionImg" src={Reception} alt="reception image" />
-        </div>
-      </div> */}
       <Check />
       <div className="icons">
         <Service icon="fa-solid fa-wifi" title="High speed internet" />
@@ -54,11 +50,7 @@ function Home() {
         <Service icon="fa-solid fa-building shield" title="Highly secure" />
       </div>
       <Header text="Your Stay Begins Here" />
-      <div className="fancy-divider">
-        <span></span>
-        <Icon icon="fa-solid fa-leaf" className="gold-icon" />
-        <span></span>
-      </div>
+      <Fancy />
       <section id="Rooms">
         <div className="room-container">
           <div className="room-text">
@@ -104,11 +96,7 @@ function Home() {
       <br />
       <section id="Restaurant-Service"></section>
       <Header text="Step Into Relaxation & Flavor" />
-      <div className="fancy-divider">
-        <span></span>
-        <Icon icon="fa-solid fa-leaf" className="gold-icon" />
-        <span></span>
-      </div>
+      <Fancy />
 
       <section id="Restaurant-Service">
         <div className="room-container">
@@ -123,15 +111,7 @@ function Home() {
               <Card
                 ImgUrl={Bar}
                 alt="restaurant uimage"
-                heading={
-                  <>
-                    Garden Brau
-                    <Icon
-                      icon="fa-solid fa-beer-mug-empty"
-                      className="beer-icon"
-                    />
-                  </>
-                }
+                heading="Garden Brau"
                 text="Enjoy our onsite brewey which we have been making for over 20 years,
         with our best chemists experience luxury on its another form"
               />
@@ -148,37 +128,47 @@ function Home() {
         </div>
       </section>
       <Header text="Crafted In House.Perfected In Taste" />
-      <div className="fancy-divider">
-        <span></span>
-        <Icon icon="fa-solid fa-leaf" className="gold-icon" />
-        <span></span>
-      </div>
-      <div className="beer-container">
-        <Image imgURL={Machine} className="machine-image" />
-        <Header text="Brewed Here" className="brewText" />
-        <div className="fancy-divider">
-          <span></span>
-          <Icon icon="fa-solid fa-leaf" className="gold-icon" />
-          <span></span>
-        </div>
+      <Fancy />
 
-        <p className="brewDescription">
-          Welcome to a stay where comfort meets craftsmanship. Our hotel is
-          renowned for its locally brewed beer, carefully crafted by expert
-          brewers with decades of experience. Each sip reflects tradition,
-          quality, and passion, bringing you an authentic taste of the region.
-          Relax in our cozy rooms after enjoying a refreshing glass straight
-          from our in-house brewery. The aroma of freshly brewed beer fills the
-          atmosphere, creating a unique and inviting experience for every guest.
-          Whether you’re here to unwind or explore, our expert team ensures
-          every brew is perfected to delight your senses. At our hotel, great
-          hospitality and exceptional beer come together in one unforgettable
-          experience.
-        </p>
-        <div className="beerIcons">
-          <Icon icon="fa-solid fa-wheat-awn" className="Wheat-icon" />
-          <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
-          <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
+      <div className="beer-container">
+        <div className="beer-img-cont">
+          <Image imgURL={Machine} className="machine-image" />
+        </div>
+        <div className="beer-text-cont">
+          <Header
+            text={
+              <>
+                Brewed <br /> Here{" "}
+              </>
+            }
+            Here
+            className="brewText"
+          />
+          <Fancy />
+          <div className="text-box-container">
+            <TextBox text="Locally Sourced" />
+            <TextBox text="Since 1992" />
+            <TextBox text=" Craft brewed " />
+          </div>
+
+          <p className="brewDescription">
+            Welcome to a stay where comfort meets craftsmanship. Our hotel is
+            renowned for its locally brewed beer, carefully crafted by expert
+            brewers with decades of experience. Each sip reflects tradition,
+            quality, and passion, bringing you an authentic taste of the region.
+            Relax in our cozy rooms after enjoying a refreshing glass straight
+            from our in-house brewery. <br /> <br /> The aroma of freshly brewed
+            beer fills the atmosphere, creating a unique and inviting experience
+            for every guest. Whether you’re here to unwind or explore, our
+            expert team ensures every brew is perfected to delight your senses.
+            At our hotel, great hospitality and exceptional beer come together
+            in one unforgettable experience.
+          </p>
+          <div className="beerIcons">
+            <Icon icon="fa-solid fa-wheat-awn" className="Wheat-icon" />
+            <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
+            <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
+          </div>
         </div>
       </div>
     </>
