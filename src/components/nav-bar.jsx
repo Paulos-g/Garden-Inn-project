@@ -28,7 +28,7 @@ function Nav() {
             <a href="#Restaurant Service">Restaurant Service</a>
           </li>
           <li>
-            <a href="#Garden Brau">Garden Brau</a>
+            <a href="#Garden-Brau">Garden Brau</a>
           </li>
         </ul>
         <Button text="Book now" />

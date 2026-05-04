@@ -69,10 +69,6 @@ body {
   line-height: 1.6;
   font-size: 1.2rem;
 }
-.receptionImg {
-  width: 600px;
-  height: 300px;
-}
 .icons {
   margin-top: 30px;
   display: flex;
@@ -180,7 +176,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.room-container {
+.hero-image .room-container {
   display: flex;
 }
 .viewBtn {

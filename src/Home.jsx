@@ -128,77 +128,72 @@ function Home() {
           </div>
         </div>
       </section>
+
       <Header text="Crafted In House.Perfected In Taste" />
-      <Fancy />
+      <section id="Garden-Brau">
+        <Fancy />
 
-      <div className="beer-container">
-        <div className="beer-img-cont">
-          <Image imgURL={Machine} className="machine-image" />
-        </div>
-        <div className="beer-text-cont">
-          <Header
-            text={
-              <>
-                Brewed <br /> Here{" "}
-              </>
-            }
-            Here
-            className="brewText"
-          />
-          <Fancy />
-          <div className="text-box-container">
-            <TextBox text="Locally Sourced" />
-            <TextBox text="Since 1992" />
-            <TextBox text=" Craft brewed " />
+        <div className="beer-container">
+          <div className="beer-img-cont">
+            <Image imgURL={Machine} className="machine-image" />
           </div>
+          <div className="beer-text-cont">
+            <Header text={<>Brewed Here </>} Here className="brewText" />
+            <Fancy />
+            <div className="text-box-container">
+              <TextBox text="Locally Sourced" />
+              <TextBox text="Since 1992" />
+              <TextBox text=" Craft brewed " />
+            </div>
 
-          <p className="brewDescription">
-            Welcome to a stay where comfort meets craftsmanship. Our hotel is
-            renowned for its locally brewed beer, carefully crafted by expert
-            brewers with decades of experience. Each sip reflects tradition,
-            quality, and passion, bringing you an authentic taste of the region.
-            Relax in our cozy rooms after enjoying a refreshing glass straight
-            from our in-house brewery. <br /> <br /> The aroma of freshly brewed
-            beer fills the atmosphere, creating a unique and inviting experience
-            for every guest. Whether you’re here to unwind or explore, our
-            expert team ensures every brew is perfected to delight your senses.
-            At our hotel, great hospitality and exceptional beer come together
-            in one unforgettable experience.
-          </p>
-          <div className="beerIcons">
-            <Icon icon="fa-solid fa-wheat-awn" className="Wheat-icon" />
-            <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
-            <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
-          </div>
-          <div className="counter-container">
-            <Counter
-              Number="35+"
-              text={
-                <>
-                  YEARS <br /> BREWING
-                </>
-              }
-            />
-            <Counter
-              Number="100%"
-              text={
-                <>
-                  NATURAL
-                  <br /> INGREDIENTS
-                </>
-              }
-            />
-            <Counter
-              Number="12"
-              text={
-                <>
-                  PARTNER <br /> COMPANIES
-                </>
-              }
-            />
+            <p className="brewDescription">
+              Welcome to a stay where comfort meets craftsmanship. Our hotel is
+              renowned for its locally brewed beer, carefully crafted by expert
+              brewers with decades of experience. Each sip reflects tradition,
+              quality, and passion, bringing you an authentic taste of the
+              region. Relax in our cozy rooms after enjoying a refreshing glass
+              straight from our in-house brewery. <br /> <br /> The aroma of
+              freshly brewed beer fills the atmosphere, creating a unique and
+              inviting experience for every guest. Whether you’re here to unwind
+              or explore, our expert team ensures every brew is perfected to
+              delight your senses. At our hotel, great hospitality and
+              exceptional beer come together in one unforgettable experience.
+            </p>
+            <div className="beerIcons">
+              <Icon icon="fa-solid fa-wheat-awn" className="Wheat-icon" />
+              <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
+              <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
+            </div>
+            <div className="counter-container">
+              <Counter
+                Number="35+"
+                text={
+                  <>
+                    YEARS <br /> BREWING
+                  </>
+                }
+              />
+              <Counter
+                Number="100%"
+                text={
+                  <>
+                    NATURAL
+                    <br /> INGREDIENTS
+                  </>
+                }
+              />
+              <Counter
+                Number="12"
+                text={
+                  <>
+                    PARTNER <br /> COMPANIES
+                  </>
+                }
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
