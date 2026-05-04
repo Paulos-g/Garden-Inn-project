@@ -18,6 +18,7 @@ import Icon from "./components/Icons";
 import Machine from "./assets/machineimage.png";
 import Fancy from "./components/FancyIcon";
 import TextBox from "./components/Textbox";
+import Counter from "./components/Counter";
 
 function Home() {
   return (
@@ -169,6 +170,32 @@ function Home() {
             <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
             <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
           </div>
+
+          <Counter
+            Number="35+"
+            text={
+              <>
+                YEARS <br /> BREWING
+              </>
+            }
+          />
+          <Counter
+            Number="100%"
+            text={
+              <>
+                NATURAL
+                <br /> INGREDIENTS
+              </>
+            }
+          />
+          <Counter
+            Number="12"
+            text={
+              <>
+                PARTNER <br /> COMPANIES
+              </>
+            }
+          />
         </div>
       </div>
     </>

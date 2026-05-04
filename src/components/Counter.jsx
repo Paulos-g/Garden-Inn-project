@@ -1,5 +1,6 @@
 import React from "react";
-function Couunter(props) {
+
+function Counter(props) {
   return (
     <div className="counter-container">
       <div className="counter-box">
@@ -9,3 +10,4 @@ function Couunter(props) {
     </div>
   );
 }
+export default Counter;
