@@ -170,32 +170,33 @@ function Home() {
             <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
             <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
           </div>
-
-          <Counter
-            Number="35+"
-            text={
-              <>
-                YEARS <br /> BREWING
-              </>
-            }
-          />
-          <Counter
-            Number="100%"
-            text={
-              <>
-                NATURAL
-                <br /> INGREDIENTS
-              </>
-            }
-          />
-          <Counter
-            Number="12"
-            text={
-              <>
-                PARTNER <br /> COMPANIES
-              </>
-            }
-          />
+          <div className="counter-container">
+            <Counter
+              Number="35+"
+              text={
+                <>
+                  YEARS <br /> BREWING
+                </>
+              }
+            />
+            <Counter
+              Number="100%"
+              text={
+                <>
+                  NATURAL
+                  <br /> INGREDIENTS
+                </>
+              }
+            />
+            <Counter
+              Number="12"
+              text={
+                <>
+                  PARTNER <br /> COMPANIES
+                </>
+              }
+            />
+          </div>
         </div>
       </div>
     </>

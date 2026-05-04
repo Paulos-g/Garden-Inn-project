@@ -285,15 +285,33 @@ body {
 }
 .text-box-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
 }
+.text-box-container:hover {
+  transform: translateY(-2px);
+}
+
 .counter-container {
   display: flex;
   gap: 50px;
   text-align: center;
+  margin-top: 10px;
+  margin: 0 auto;
 }
 .counter-box {
+  margin-top: 30px;
   height: 100px;
   width: 100px;
-  background-color: var(--box-color);
+}
+.counter-box h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: var(--nav-color);
+}
+.counter-box p {
+  font-size: 0.9rem;
+  margin-top: 7px;
+  color: var(--accent);
 }
