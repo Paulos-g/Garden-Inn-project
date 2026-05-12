@@ -52,10 +52,11 @@ function Home() {
       </div>
       <Header text="Your Stay Begins Here" />
       <Fancy />
+
       <section id="Rooms">
         <div className="room-container">
           <div className="room-text">
-            <h3>Our Rooms</h3>
+            <h3 className="roomsHeading">Our Rooms</h3>
             <h2>
               Rooms & Suites <br /> Designed for You
             </h2>
@@ -74,7 +75,7 @@ function Home() {
               heading="Double Room"
               price="Starting from $150/ night"
               text="Sophisticated king-sized room with one plush king bed, high-quality
-         linens"
+               linens"
             />
             <Card
               ImgUrl={twinRoom}
@@ -82,7 +83,7 @@ function Home() {
               heading="Twin room"
               price="Starting from $120/ night"
               text="Well-appointed twin classic room with two single beds,
-         quality bedding"
+             quality bedding"
             />
             <Card
               ImgUrl={singleRoom}
@@ -114,7 +115,7 @@ function Home() {
                 alt="restaurant uimage"
                 heading="Garden Brau"
                 text="Enjoy our onsite brewey which we have been making for over 20 years,
-        with our best chemists experience luxury on its another form"
+               with our best chemists experience luxury on its another form"
               />
 
               <Card
@@ -122,7 +123,7 @@ function Home() {
                 alt="restaurant image"
                 heading="Our restaurant"
                 text="Experience Meals in their organic nature, where every dish served with love
-        and companinon, Try our famous chicken roast with rice"
+               and companinon, Try our famous chicken roast with rice"
               />
             </div>
           </div>
@@ -194,6 +195,17 @@ function Home() {
           </div>
         </div>
       </section>
+      <Header text="Book Your stay Today & Enjoy" />
+      <Fancy />
+      <p className="location-text">Location & Hours </p>
+      <Header
+        text={
+          <div className="find-text">
+            Find <span>Us</span>
+          </div>
+        }
+      />
+      <div className="map-box"></div>
     </>
   );
 }

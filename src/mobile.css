@@ -39,11 +39,11 @@
 /* Small laptops */
 
 @media (max-width: 1024px) {
-  .room-container {
+  /* .room-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-  }
+  } */
   .hero-image {
     background-image:
       linear-gradient(
@@ -57,16 +57,22 @@
     background-size: cover;
     background-position: center;
   }
+  .nav-links {
+    display: flex;
+  }
+  .bookBtn {
+    display: none;
+  }
 
-  /* .nav-links {
+  .nav-links {
     display: none;
   }
   .bookBtn {
     display: none;
-  } */
-  /* .icons {
+  }
+  .icons {
     flex-wrap: wrap;
-  } */
+  }
   .card {
     gap: 20px;
     /* flex-direction: column; */
@@ -75,4 +81,9 @@
     height: 400px;
     width: 500px;
   }
+  .hero-text h3 {
+    text-align: center;
+  }
+}
+@media (max-width: 1536px) {
 }

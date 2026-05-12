@@ -23,6 +23,9 @@ body {
   padding: 80px;
   z-index: 2;
 }
+.room-container {
+  display: flex;
+}
 .hero-text h3 {
   font-size: 1rem;
   color: var(--accent);
@@ -310,4 +313,25 @@ body {
   font-size: 0.9rem;
   margin-top: 7px;
   color: var(--accent);
+}
+.location-text {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-align: center;
+  margin-top: 20px;
+}
+.find-text {
+  margin-top: -40px;
+  font-size: 2rem;
+}
+.find-text span {
+  color: var(--accent);
+}
+.map-box {
+  width: 80vw;
+  height: 500px;
+  background-color: var(--nav-color);
+  margin: 0 auto;
+  border-radius: 10px;
 }
