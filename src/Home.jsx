@@ -57,9 +57,9 @@ function Home() {
         <div className="room-container">
           <div className="room-text">
             <h3 className="roomsHeading">Our Rooms</h3>
-            <h2>
+            <h1>
               Rooms & Suites <br /> Designed for You
-            </h2>
+            </h1>
             <p>
               From cozy rooms to spacious suits, Every space is crafted for your
               comfort and relaxation
@@ -104,7 +104,7 @@ function Home() {
         <div className="room-container">
           <div className="room-text">
             <h3>Our services</h3>
-            <h2>Luxury Bar & Restaurants for Your Stay.</h2>
+            <h1>Luxury Bar & Restaurants for Your Stay.</h1>
             <p>From Our Exclusive bar into Spacious restaurant classy vibes</p>
           </div>
 
@@ -121,7 +121,7 @@ function Home() {
               <Card
                 ImgUrl={restaurant}
                 alt="restaurant image"
-                heading="Our restaurant"
+                heading="Our Restaurant"
                 text="Experience Meals in their organic nature, where every dish served with love
                and companinon, Try our famous chicken roast with rice"
               />

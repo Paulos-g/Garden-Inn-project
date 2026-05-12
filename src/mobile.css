@@ -17,10 +17,11 @@
   .beer-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .machine-image {
-    height: 400px;
-    width: 500px;
+    height: auto;
+    max-width: 500px;
   }
   .romms-partion {
     display: flex;
@@ -33,7 +34,12 @@
     background-position: center;
   }
   .check-container {
-    width: 490px;
+    height: 80px;
+    max-width: 490px;
+  }
+  .room-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 /* Small laptops */
@@ -78,6 +84,7 @@
     /* flex-direction: column; */
   }
   .machine-image {
+    margin: 0 auto;
     height: 400px;
     width: 500px;
   }
@@ -85,5 +92,20 @@
     text-align: center;
   }
 }
-@media (max-width: 1536px) {
+
+@media (max-width: 1200px) {
+  .machine-image {
+    height: 400px;
+    width: 500px;
+  }
+  .room-container {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .romms-partion {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
