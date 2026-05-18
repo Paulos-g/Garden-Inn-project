@@ -20,6 +20,7 @@ import Fancy from "./components/FancyIcon";
 import TextBox from "./components/Textbox";
 import Counter from "./components/Counter";
 import Map from "./components/map";
+import Address from "./components/Adress";
 
 function Home() {
   return (
@@ -211,16 +212,22 @@ function Home() {
           <Map />
           <div className="location-text">
             <Header text="How to reach Us" className="reach-heading" />
-            <h3>Address</h3>
-            <p>Around Bole Behind Edna Mall</p>
-            <br />
-            <p>8th Street</p>
-            <br />
-            <p>Addis ABABA</p>
-            <br />
-            <Fancy />
+            <Address
+              Heading="Address"
+              Icon="fa-solid fa-location-dot"
+              Area="Bole Avenue Behind Edna Mall"
+              street="8th street, Rwanda"
+              Country="ADDIS ABABA, ETHIOPIA"
+            />
+            <Address
+              Heading="Opening Hours"
+              Icon="fa-solid fa-clock"
+              Area=" Restaurant |Mon-Fri 24Hrs 7am-11pm| "
+              street="Brewery |Sat-Sun 24Hrs  11am-6pm| "
+            />
           </div>
         </div>
+        <Fancy />
       </div>
 
       <Header text="Explore More Using Our Socials" />

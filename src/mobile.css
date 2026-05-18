@@ -96,6 +96,14 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .map-box {
+    width: 650px;
+    height: 900px;
+  }
+  .map-partition {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1200px) {
