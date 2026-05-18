@@ -212,6 +212,7 @@ function Home() {
           <Map />
           <div className="location-text">
             <Header text="How to reach Us" className="reach-heading" />
+            <hr style={{ border: "1px solid #b8860b", margin: "16px 0" }} />
             <Address
               Heading="Address"
               Icon="fa-solid fa-location-dot"
