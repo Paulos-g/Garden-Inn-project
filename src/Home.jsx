@@ -19,6 +19,7 @@ import Machine from "./assets/machineimage.png";
 import Fancy from "./components/FancyIcon";
 import TextBox from "./components/Textbox";
 import Counter from "./components/Counter";
+import Map from "./components/map";
 
 function Home() {
   return (
@@ -139,7 +140,7 @@ function Home() {
             <Image imgURL={Machine} className="machine-image" />
           </div>
           <div className="beer-text-cont">
-            <Header text={<>Brewed Here </>} Here className="brewText" />
+            <Header text={<>Brewed Here </>} className="brewText" />
             <Fancy />
             <div className="text-box-container">
               <TextBox text="Locally Sourced" />
@@ -205,7 +206,24 @@ function Home() {
           </div>
         }
       />
-      <div className="map-box"></div>
+      <div className="map-box">
+        <div className="map-partition">
+          <Map />
+          <div className="location-text">
+            <Header text="How to reach Us" className="reach-heading" />
+            <h3>Address</h3>
+            <p>Around Bole Behind Edna Mall</p>
+            <br />
+            <p>8th Street</p>
+            <br />
+            <p>Addis ABABA</p>
+            <br />
+            <Fancy />
+          </div>
+        </div>
+      </div>
+
+      <Header text="Explore More Using Our Socials" />
     </>
   );
 }

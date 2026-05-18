@@ -61,6 +61,10 @@ body {
   font-size: 2rem;
   color: var(--text-dark);
 }
+.reach-heading {
+  color: var(--nav-color);
+  letter-spacing: 0.05em;
+}
 .descriptContainer {
   display: flex;
   justify-content: space-evenly;
@@ -336,4 +340,23 @@ body {
   background-color: var(--nav-color);
   margin: 0 auto;
   border-radius: 10px;
+}
+.reach-heading {
+  color: white;
+}
+.map-partition {
+  display: flex;
+  justify-content: space-around;
+}
+.reach-heading + h3 {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.reach-heading + p {
+  color: white;
+}
+.location-text p {
+  color: white;
 }
