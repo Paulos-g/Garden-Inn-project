@@ -21,6 +21,8 @@ import TextBox from "./components/Textbox";
 import Counter from "./components/Counter";
 import Map from "./components/map";
 import Address from "./components/Adress";
+import TwoColumn from "./components/Two_row";
+import Sauna from "./assets/sauna.jpg";
 
 function Home() {
   return (
@@ -54,7 +56,6 @@ function Home() {
       </div>
       <Header text="Your Stay Begins Here" />
       <Fancy />
-
       <section id="Rooms">
         <div className="room-container">
           <div className="room-text">
@@ -101,7 +102,6 @@ function Home() {
       <section id="Restaurant-Service"></section>
       <Header text="Step Into Relaxation & Flavor" />
       <Fancy />
-
       <section id="Restaurant-Service">
         <div className="room-container">
           <div className="room-text">
@@ -131,7 +131,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       <Header text="Crafted In House.Perfected In Taste" />
       <section id="Garden-Brau">
         <Fancy />
@@ -162,11 +161,7 @@ function Home() {
               delight your senses. At our hotel, great hospitality and
               exceptional beer come together in one unforgettable experience.
             </p>
-            <div className="beerIcons">
-              <Icon icon="fa-solid fa-wheat-awn" className="Wheat-icon" />
-              <Icon icon="fa-solid fa-seedling" className="Wheat-icon" />
-              <Icon icon="fa-solid fa-tree" className="Wheat-icon" />
-            </div>
+
             <div className="counter-container">
               <Counter
                 Number="35+"
@@ -196,7 +191,47 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="beer-container">
+          <div>
+            <div className="beer-img-cont">
+              <Image imgURL={Sauna} className="sauna-image" />
+            </div>
+          </div>
+          <div>
+            <Header text="Sauna & Spa" className="brewText" />
+            <div className="text-box-container">
+              <TextBox text="Pure Relaxation" />
+              <TextBox text="Since 1992" />
+              <TextBox text=" Expert Therapists " />
+            </div>
+            <p className="brewDescription">
+              Step into a sanctuary of calm at Garden Inn's private sauna and
+              spa . From the moment you enter, the warmth of natural wood, the
+              scent of eucalyptus, and the hush of tranquility draw you away
+              from the world. Our specialist therapists offer bespoke treatments
+              tailored to your needs — whether it's a revitalizing steam
+              session, a deep-tissue massage, or a nourishing body wrap. Every
+              experience is curated to restore your energy and soothe your
+              senses.
+            </p>
+            <div className="counter-container">
+              <Counter Number="12+" text={<>TREATMENTS</>} />
+              <Counter
+                Number="30+"
+                text={
+                  <>
+                    EXPRETISED
+                    <br /> PROFFESIONALS
+                  </>
+                }
+              />
+              <Counter Number="4.9" text={<>GUEST RATING</>} />
+            </div>
+          </div>
+        </div>
       </section>
+      <Header text="Restore & Relax " />
+      div
       <Header text="Book Your stay Today & Enjoy" />
       <Fancy />
       <p className="location-text">Location & Hours </p>
@@ -230,7 +265,6 @@ function Home() {
         </div>
         <Fancy />
       </div>
-
       <Header text="Explore More Using Our Socials" />
     </>
   );

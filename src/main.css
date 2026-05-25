@@ -175,6 +175,7 @@ body {
   width: 400px;
   padding: 80px;
 }
+
 .room-text h1 {
   font-family: "Playfair Display", serif;
   color: var(--text-dark);
@@ -250,6 +251,15 @@ body {
   height: 600px;
   margin: auto;
   float: left;
+  border-radius: 70px;
+}
+.sauna-image {
+  width: 950px;
+  height: 600px;
+  margin: auto;
+  float: left;
+  border-radius: 70px;
+  margin-left: 10px;
 }
 .brewDescription {
   color: gray;
@@ -277,7 +287,7 @@ body {
 .text-box {
   background-color: var(--box-color);
   border: 2px solid gold;
-  width: fit-content;
+  padding: 6px;
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -287,6 +297,10 @@ body {
 }
 .beer-container {
   display: flex;
+  gap: 30px;
+}
+.special-text .sauna-image {
+  border-radius: 10px;
 }
 .text-box-container {
   display: flex;
