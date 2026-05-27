@@ -19,10 +19,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .machine-image {
-    height: auto;
-    max-width: 500px;
-  }
+
   .romms-partion {
     display: flex;
     flex-direction: column;
@@ -88,6 +85,11 @@
     height: 400px;
     width: 500px;
   }
+  .sauna-image {
+    margin: 0 auto;
+    height: 400px;
+    width: 500px;
+  }
   .hero-text h3 {
     text-align: center;
   }
@@ -120,5 +122,13 @@
   .romms-partion {
     flex-wrap: wrap;
     gap: 20px;
+  }
+  .map-box {
+    width: 450px;
+    height: 1100px;
+  }
+  .map-frame iframe {
+    width: 400px;
+    margin: 0 auto;
   }
 }
