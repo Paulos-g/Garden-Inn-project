@@ -265,7 +265,49 @@ function Home() {
         </div>
         <Fancy />
       </div>
-      <Header text="Explore More Using Our Socials" />
+      <Header text="Explore More of Us" />
+      <div className="footer-container">
+        <div className="text">
+          <h1>Garden Inn</h1>
+          <p>Hotel & Appartments</p>
+          <p>
+            Where comfort meets craftsmanship. Experience locally <br /> brewed
+            beer, artisan cuisine, and a world-class spa — all <br /> under one
+            roof since 1992.
+          </p>
+        </div>
+        <div className="explore-text">
+          <h2>EXPLORE</h2>
+          <ul>
+            <li>
+              <a href="#Home">Home</a>
+            </li>
+            <li>
+              <a href="#Rooms">Rooms</a>
+            </li>
+            <li>
+              <a href="#Services">Services</a>
+            </li>
+            <li>
+              <a href="#Nearby Attractions">Nearby Attractions</a>
+            </li>
+            <li>
+              <a href="#Restaurant Service">Restaurant Service</a>
+            </li>
+            <li>
+              <a href="#Garden-Brau">Garden Brau</a>
+            </li>
+          </ul>
+        </div>
+        <div className="contact-section">
+          <h2>CONTACT US</h2>
+          <h3>Adress</h3>
+          <p></p>
+        </div>
+        <div className="subscribe-section">
+          <h3>STAY IN TOUCH</h3>
+        </div>
+      </div>
     </>
   );
 }
