@@ -191,6 +191,8 @@ function Home() {
             </div>
           </div>
         </div>
+        <Header text="Restore & Relax " />
+        <Fancy />
         <div className="beer-container">
           <div>
             <div className="beer-img-cont">
@@ -199,6 +201,7 @@ function Home() {
           </div>
           <div>
             <Header text="Sauna & Spa" className="brewText" />
+            <Fancy />
             <div className="text-box-container">
               <TextBox text="Pure Relaxation" />
               <TextBox text="Since 1992" />
@@ -230,8 +233,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <Header text="Restore & Relax " />
-      div
+
       <Header text="Book Your stay Today & Enjoy" />
       <Fancy />
       <p className="location-text">Location & Hours </p>
