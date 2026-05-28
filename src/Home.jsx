@@ -278,7 +278,7 @@ function Home() {
         </div>
         <div className="explore-text">
           <h2>EXPLORE</h2>
-          <ul>
+          <ul className="footer-links">
             <li>
               <a href="#Home">Home</a>
             </li>
@@ -297,15 +297,26 @@ function Home() {
             <li>
               <a href="#Garden-Brau">Garden Brau</a>
             </li>
+            <li>
+              <a href="">Book Now</a>
+            </li>
           </ul>
         </div>
         <div className="contact-section">
           <h2>CONTACT US</h2>
-          <h3>Adress</h3>
+          <h3>Address</h3>
+          <p>Bole Avenue Behind Edna Mall</p>
+          <p>8th street Rwanda</p>
           <p></p>
+          <h3>Reservation</h3>
+          <p>+25191234567</p>
+          <h3>Email</h3>
+          <p>reservation@gardeninn.com</p>
+          <h3>Reception</h3>
+          <p>24/7 open</p>
         </div>
         <div className="subscribe-section">
-          <h3>STAY IN TOUCH</h3>
+          <h2>STAY IN TOUCH</h2>
         </div>
       </div>
     </>
