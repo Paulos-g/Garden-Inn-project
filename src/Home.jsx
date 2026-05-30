@@ -319,6 +319,16 @@ function Home() {
         </div>
         <div className="subscribe-section">
           <h2>STAY IN TOUCH</h2>
+          <input
+            type="text"
+            name=""
+            id="subscribe"
+            placeholder="Type your name here"
+          />
+          <Button text="SUBSCRIBE" />
+          <TextBox text="BEST BREW HOTEL 2024" />
+          <TextBox text="Eco Certified" />
+          <TextBox text="TripAdvisor Excellence" />
         </div>
       </div>
     </>

@@ -382,6 +382,8 @@ body {
 }
 .footer-container {
   width: 99vw;
+  flex-wrap: wrap;
+
   height: 700px;
   background-color: #12572e;
   border-radius: 10px;
@@ -436,10 +438,40 @@ body {
   color: #a09880;
   font-family: "Jost", sans-serif;
 }
+.subscribe-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.subscribe-section .bookBtn {
+  width: 300px;
+}
 .subscribe-section h2 {
   margin-top: 20px;
   color: white;
   font-family: "Jost", sans-serif;
   margin-bottom: 30px;
   letter-spacing: 0.18em;
+}
+#subscribe {
+  width: 300px;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+#subscribe::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+#subscribe:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 0 15px rgba(255, 255, 255, 0.3),
+    0 0 30px rgba(102, 126, 234, 0.5);
+  transform: scale(1.02);
 }

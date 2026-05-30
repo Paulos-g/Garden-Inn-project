@@ -106,6 +106,10 @@
   .map-partition {
     flex-direction: column;
   }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -130,5 +134,12 @@
   .map-frame iframe {
     width: 400px;
     margin: 0 auto;
+  }
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 1500px;
+    align-items: center;
   }
 }
