@@ -23,6 +23,7 @@ import Map from "./components/map";
 import Address from "./components/Adress";
 import TwoColumn from "./components/Two_row";
 import Sauna from "./assets/sauna.jpg";
+import Footer from "./components/Footer";
 
 function Home() {
   return (
@@ -268,69 +269,8 @@ function Home() {
         <Fancy />
       </div>
       <Header text="Explore More of Us" />
-      <div className="footer-container">
-        <div className="text">
-          <h1>Garden Inn</h1>
-          <p>Hotel & Appartments</p>
-          <p>
-            Where comfort meets craftsmanship. Experience locally <br /> brewed
-            beer, artisan cuisine, and a world-class spa — all <br /> under one
-            roof since 1992.
-          </p>
-        </div>
-        <div className="explore-text">
-          <h2>EXPLORE</h2>
-          <ul className="footer-links">
-            <li>
-              <a href="#Home">Home</a>
-            </li>
-            <li>
-              <a href="#Rooms">Rooms</a>
-            </li>
-            <li>
-              <a href="#Services">Services</a>
-            </li>
-            <li>
-              <a href="#Nearby Attractions">Nearby Attractions</a>
-            </li>
-            <li>
-              <a href="#Restaurant Service">Restaurant Service</a>
-            </li>
-            <li>
-              <a href="#Garden-Brau">Garden Brau</a>
-            </li>
-            <li>
-              <a href="">Book Now</a>
-            </li>
-          </ul>
-        </div>
-        <div className="contact-section">
-          <h2>CONTACT US</h2>
-          <h3>Address</h3>
-          <p>Bole Avenue Behind Edna Mall</p>
-          <p>8th street Rwanda</p>
-          <p></p>
-          <h3>Reservation</h3>
-          <p>+25191234567</p>
-          <h3>Email</h3>
-          <p>reservation@gardeninn.com</p>
-          <h3>Reception</h3>
-          <p>24/7 open</p>
-        </div>
-        <div className="subscribe-section">
-          <h2>STAY IN TOUCH</h2>
-          <input
-            type="text"
-            name=""
-            id="subscribe"
-            placeholder="Type your name here"
-          />
-          <Button text="SUBSCRIBE" />
-          <TextBox text="BEST BREW HOTEL 2024" />
-          <TextBox text="Eco Certified" />
-          <TextBox text="TripAdvisor Excellence" />
-        </div>
-      </div>
+
+      <Footer />
     </>
   );
 }
