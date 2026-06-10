@@ -60,12 +60,6 @@
     background-size: cover;
     background-position: center;
   }
-  .nav-links {
-    display: flex;
-  }
-  .bookBtn {
-    display: none;
-  }
 
   .nav-links {
     display: none;
@@ -82,8 +76,9 @@
   }
   .machine-image {
     margin: 0 auto;
-    height: 400px;
-    width: 500px;
+    height: auto;
+    width: 100%;
+    max-width: 500px;
   }
   .sauna-image {
     margin: 0 auto;
@@ -118,10 +113,10 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .machine-image {
-    height: 400px;
-    width: 500px;
+    height: auto;
+    width: 600px;
   }
   .room-container {
     flex-wrap: wrap;
@@ -149,5 +144,9 @@
   }
   .footer-container {
     height: 1500px;
+  }
+  .sauna-image {
+    height: auto;
+    width: 500px;
   }
 }

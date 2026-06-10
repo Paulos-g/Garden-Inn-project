@@ -383,7 +383,7 @@ body {
 .footer-container {
   width: 99vw;
   flex-wrap: wrap;
-  height: 700px;
+  height: 600px;
   background-color: #12572e;
   border-radius: 10px;
 }
@@ -490,4 +490,5 @@ body {
   font-family: "Jost", sans-serif;
   margin: 0;
   word-spacing: 2px;
+  text-align: center;
 }
