@@ -114,6 +114,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
+
 .card-container:hover {
   transform: translateY(-2px);
 }
@@ -179,6 +180,8 @@ body {
 .room-text h1 {
   font-family: "Playfair Display", serif;
   color: var(--text-dark);
+}
+.card {
 }
 .room-text p {
   color: gray;

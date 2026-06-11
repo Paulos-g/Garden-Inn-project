@@ -95,7 +95,7 @@ function Footer() {
         <p>
           ©{new Date().getFullYear()} GARDEN INN APARTMENTS.ALL RIGHTS RESERVED.
         </p>
-      </div>{" "}
+      </div>
     </div>
   );
 }
