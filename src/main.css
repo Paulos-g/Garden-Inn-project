@@ -54,6 +54,16 @@ body {
     ),
     url("./assets/garden\ bldg.webp");
 }
+.content-container {
+  flex: 1;
+  background: linear-gradient(
+    to left,
+    rgba(23, 69, 34, 0.9) 0%,
+    rgba(20, 60, 30, 0.6) 25%,
+    rgba(20, 60, 30, 0.2) 80%,
+    transparent 100%
+  );
+}
 .heading {
   margin-top: 50px;
   text-align: center;

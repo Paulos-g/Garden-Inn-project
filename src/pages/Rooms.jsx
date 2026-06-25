@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React from "react";
 import Header from "../components/Headers";
 import Heading from "../components/Heading";
 import Nav from "../components/nav-bar";
@@ -17,7 +17,7 @@ function Room() {
       <Nav />
       <div data-aos="fade-up">
         <Heading
-          sTtitle="GARDEN INN ADDIS ABABA"
+          sTitle="GARDEN INN ADDIS ABABA"
           bTitle="Rooms & Suits Designed for You"
           descrp={
             <>
@@ -25,6 +25,7 @@ function Room() {
               rooms crafted for your comfort{" "}
             </>
           }
+          type="content-container"
         />
       </div>
     </div>
