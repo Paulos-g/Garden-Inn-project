@@ -2,6 +2,7 @@ import React from "react";
 import GardenInnLogo from "../assets/GardenInn.png";
 import Button from "./Button";
 import GardenImage from "./img";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
@@ -13,10 +14,10 @@ function Nav() {
         </a>
         <ul className="nav-links">
           <li>
-            <a href="#Home">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#Rooms">Rooms</a>
+            <Link to="/rooms">Rooms</Link>
           </li>
           <li>
             <a href="#Services">Services</a>

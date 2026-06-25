@@ -1,29 +1,30 @@
 import React from "react";
-import Nav from "./components/nav-bar";
-import Description from "./components/Description";
-import GardenImage from "./components/img";
-import Reception from "./assets/reception.png";
-import Service from "./components/ServicesIcons";
-import Image from "./components/Image";
-import Card from "./components/card";
-import doubleRoom from "./assets/Double_room.jpg";
-import twinRoom from "./assets/Twin_room.jpg";
-import singleRoom from "./assets/Single_room.webp";
-import Button from "./components/Button";
-import Header from "./components/Headers";
-import Bar from "./assets/BarImage.jpg";
-import restaurant from "./assets/restaurant.jpg";
-import Check from "./components/checkinout";
-import Icon from "./components/Icons";
-import Machine from "./assets/machineimage.png";
-import Fancy from "./components/FancyIcon";
-import TextBox from "./components/Textbox";
-import Counter from "./components/Counter";
-import Map from "./components/map";
-import Address from "./components/Adress";
-import TwoColumn from "./components/Two_row";
-import Sauna from "./assets/sauna.jpg";
-import Footer from "./components/Footer";
+import Nav from "../components/nav-bar";
+import Description from "../components/Description";
+import GardenImage from "../components/img";
+import Reception from "../assets/reception.png";
+import Service from "../components/ServicesIcons";
+import Image from "../components/Image";
+import Card from "../components/card";
+import doubleRoom from "../assets/Double_room.jpg";
+import twinRoom from "../assets/Twin_room.jpg";
+import singleRoom from "../assets/Single_room.webp";
+import Button from "../components/Button";
+import Header from "../components/Headers";
+import Bar from "../assets/BarImage.jpg";
+import restaurant from "../assets/restaurant.jpg";
+import Check from "../components/checkinout";
+import Icon from "../components/Icons";
+import Machine from "../assets/machineimage.png";
+import Fancy from "../components/FancyIcon";
+import TextBox from "../components/Textbox";
+import Counter from "../components/Counter";
+import Map from "../components/map";
+import Address from "../components/Adress";
+import TwoColumn from "../components/Two_row";
+import Sauna from "../assets/sauna.jpg";
+import Footer from "../components/Footer";
+import Heading from "../components/Heading";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -40,21 +41,17 @@ function Home() {
     <>
       <Nav />
       <div data-aos="fade-up">
-        <section className="hero">
-          <div className="hero-text">
-            <h3>Welcome to Garden Inn</h3>
-            <h1>
+        <Heading
+          sTitle="Welcome to Garden Inn"
+          bTitle={
+            <>
               Comfort Stay <br />
               in the Heart of Nature
-            </h1>
-            <p>
-              Experience warm hospitality, modern comfort, and peacefull
-              environment for truly, memorable stay
-            </p>
-            <Button text="Explore Rooms" />
-          </div>
-          <div className="hero-image"></div>
-        </section>
+            </>
+          }
+          descrp=" Experience warm hospitality, modern comfort, and peacefull
+              environment for truly, memorable stay"
+        />
       </div>
       <Check />
       <div data-aos="fade-up">

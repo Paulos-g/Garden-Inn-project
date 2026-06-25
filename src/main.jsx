@@ -1,9 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Home from "./Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Room from "./pages/Rooms";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms" element={<Room />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );

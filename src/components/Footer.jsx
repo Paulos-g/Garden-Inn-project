@@ -2,8 +2,11 @@ import Icon from "./Icons";
 import Header from "./Headers";
 import TextBox from "./Textbox";
 import Button from "./Button";
+import Input from "./Input";
+import { useState } from "react";
 
 function Footer() {
+  const [newInput, setNewInput] = useState("");
   return (
     <div className="footer-container">
       <div className="footer-container">
@@ -58,12 +61,8 @@ function Footer() {
           </div>
           <div className="subscribe-section">
             <h2>STAY IN TOUCH</h2>
-            <input
-              type="text"
-              name=""
-              id="subscribe"
-              placeholder="Type your name here"
-            />
+            <Input newInput={newInput} setNewInput={setNewInput} />
+            <h2>{newInput}</h2>
             <Button text="SUBSCRIBE" />
             <TextBox text="BEST BREW HOTEL 2024" />
             <TextBox text="Eco Certified" />
@@ -93,7 +92,8 @@ function Footer() {
         </div>
         <hr style={{ border: "1px solid #b8860b", margin: "16px 0" }} />
         <p>
-          ©{new Date().getFullYear()} GARDEN INN APARTMENTS.ALL RIGHTS RESERVED.
+          &copy;{new Date().getFullYear()} GARDEN INN APARTMENTS.ALL RIGHTS
+          RESERVED.
         </p>
       </div>
     </div>
