@@ -52,6 +52,8 @@ function Home() {
           descrp=" Experience warm hospitality, modern comfort, and peacefull
               environment for truly, memorable stay"
           type="hero-image"
+          buttonText="Explore Rooms"
+          buttonLink="/rooms"
         />
       </div>
       <Check />

@@ -21,11 +21,12 @@ function Room() {
           bTitle="Rooms & Suits Designed for You"
           descrp={
             <>
-              From inttimate single rooms to signature garden suits <br /> Every
+              From intimate single rooms to signature garden suits <br /> Every
               rooms crafted for your comfort{" "}
             </>
           }
           type="content-container"
+          buttonText="Book Now"
         />
       </div>
     </div>
