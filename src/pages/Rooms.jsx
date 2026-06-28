@@ -5,6 +5,8 @@ import Nav from "../components/nav-bar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Fancy from "../components/FancyIcon";
+import RoomNav from "../components/RoomNav";
 function Room() {
   useEffect(() => {
     AOS.init({
@@ -29,6 +31,13 @@ function Room() {
           buttonText="Book Now"
         />
       </div>
+      <Header text="Choose Your Room" />
+      <Fancy />
+      <p className="brewDescription" style={{ textAlign: "center" }}>
+        Every room is a carefully considered retreat. Browse our collection and
+        find the <br /> perfect space for your stay.
+      </p>
+      <RoomNav />
     </div>
   );
 }
