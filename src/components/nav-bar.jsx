@@ -32,7 +32,7 @@ function Nav() {
             <a href="#Garden-Brau">Garden Brau</a>
           </li>
         </ul>
-        <Button text="BOOK NOW" />
+        <Button className="Book-btn" text="BOOK NOW" />
       </div>
     </>
   );

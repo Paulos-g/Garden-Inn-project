@@ -73,46 +73,48 @@ function Home() {
       <Fancy />
       <section id="Rooms">
         <div className="room-container">
-          <div className="room-text">
-            <h3 className="roomsHeading">Our Rooms</h3>
-            <h1>
-              Rooms & Suites <br /> Designed for You
-            </h1>
-            <p>
-              From cozy rooms to spacious suits, Every space is crafted for your
-              comfort and relaxation
-            </p>
-            <button className="viewBtn">
-              View All rooms <Icon icon="fa-solid fa-arrow-right" />{" "}
-            </button>
-          </div>
-          <div className="card">
-            <div data-aos="fade-right">
-              <Card
-                ImgUrl={doubleRoom}
-                alt="Double room"
-                heading="Double Room"
-                price="Starting from $150/ night"
-                text="Sophisticated king-sized room with one plush king bed, high-quality
-               linens"
-              />
-            </div>
-            <Card
-              ImgUrl={twinRoom}
-              alt="twin room"
-              heading="Twin room"
-              price="Starting from $120/ night"
-              text="Well-appointed twin classic room with two single beds,
-             quality bedding"
+          <div className="heading-wraper">
+            {" "}
+            <Heading
+              sTitle="Our Rooms"
+              bTitle={<>Rooms & Suites Designed for You</>}
+              descrp="From cozy rooms to spacious suites, every space is crafted for your comfort and relaxation."
             />
-            <div data-aos="fade-left">
+          </div>
+
+          <div className="card">
+            <div className="romms-partion">
+              <div data-aos="fade-right">
+                <Card
+                  ImgUrl={doubleRoom}
+                  P="King Sized Bed"
+                  alt="Double room"
+                  heading="Double Room"
+                  price="Starting from $150/ night"
+                  text="Sophisticated king-sized sanctuary with premium linens, a rain shower, and sweeping garden views. Perfect for couples seeking refined comfort."
+                  buttonText="Explore More"
+                />
+              </div>
               <Card
-                ImgUrl={singleRoom}
-                alt="single rooom"
-                heading="Single room"
-                price="Starting from  $100/ night"
-                text="Elegant single room featuring a comfortable single bed and premium linens"
+                ImgUrl={twinRoom}
+                alt="twin room"
+                P="Comfy sidelined Beds"
+                heading="Twin room"
+                price="Starting from $120/ night"
+                text="Well-appointed twin room with two premium single beds, ideal for friends or colleagues. Quality bedding and thoughtful amenities throughout."
+                buttonText="Explore More"
               />
+              <div data-aos="fade-left">
+                <Card
+                  ImgUrl={singleRoom}
+                  alt="single rooom"
+                  P="Cozy & Elegant Single Bed"
+                  heading="Single room"
+                  price="Starting from  $100/ night"
+                  text="Elegant single room with a plush single bed and premium linens — everything you need, nothing you don't, designed for the solo traveller."
+                  buttonText="Explore More"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -123,10 +125,13 @@ function Home() {
       <Fancy />
       <section id="Restaurant-Service">
         <div className="room-container">
-          <div className="room-text">
-            <h3>Our services</h3>
-            <h1>Luxury Bar & Restaurants for Your Stay.</h1>
-            <p>From Our Exclusive bar into Spacious restaurant classy vibes</p>
+          <div className="heading-wraper">
+            {" "}
+            <Heading
+              sTitle="Our Services"
+              bTitle={<>Luxury Bar & Restaurants for Your Stay.</>}
+              descrp="From our exclusive bar to our spacious restaurant, enjoy a classy dining experience throughout your stay."
+            />
           </div>
 
           <div className="card">
@@ -138,6 +143,7 @@ function Home() {
                   heading="Garden Brau"
                   text="Enjoy our onsite brewey which we have been making for over 20 years,
                with our best chemists experience luxury on its another form"
+                  buttonText="Explore More"
                 />
               </div>
               <div data-aos="fade-left">
@@ -147,6 +153,7 @@ function Home() {
                   heading="Our Restaurant"
                   text="Experience Meals in their organic nature, where every dish served with love
                and companinon, Try our famous chicken roast with rice"
+                  buttonText="Explore More"
                 />
               </div>
             </div>

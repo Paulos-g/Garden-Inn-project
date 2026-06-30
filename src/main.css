@@ -7,53 +7,63 @@
   --nav-color: #209c2c;
   --box-color: #ffffff;
 }
+
 body {
   background-color: var(--bg-main);
   font-family: "Poppins", sans-serif;
 }
+
 * {
   scroll-behavior: smooth;
 }
+
 .hero {
   display: flex;
   height: 100vh;
 }
+
 .hero-text {
   width: 400px;
   padding: 80px;
   z-index: 2;
 }
+
 .room-container {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
-  margin-top: 0px;
 }
+
 .hero-text h3 {
   font-size: 1rem;
   color: var(--accent);
 }
+
 .hero-text h1 {
   font-family: "Playfair Display", serif;
   font-size: 3.3rem;
 }
+
 .hero-text p {
   color: gray;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .hero-image {
   flex: 1;
   background-image:
     linear-gradient(
       to right,
       rgba(249, 250, 246, 1) 0%,
-      /* 1. Starts solid off-white */ rgba(249, 250, 246, 1) 5%,
-      /* 2. Stays solid to cover the text area */ rgba(249, 250, 246, 0) 65%
-        /* 3. Fades to completely transparent */
+      rgba(249, 250, 246, 1) 5%,
+      rgba(249, 250, 246, 0) 65%
     ),
     url("./assets/garden\ bldg.webp");
+  background-size: cover;
+  background-position: center;
 }
+
 .content-container {
   flex: 1;
   background: linear-gradient(
@@ -64,6 +74,7 @@ body {
     transparent 100%
   );
 }
+
 .heading {
   margin-top: 50px;
   text-align: center;
@@ -71,10 +82,12 @@ body {
   font-size: 2rem;
   color: var(--text-dark);
 }
+
 .reach-heading {
   color: var(--nav-color);
   letter-spacing: 0.05em;
 }
+
 .descriptContainer {
   display: flex;
   justify-content: space-evenly;
@@ -82,6 +95,7 @@ body {
   margin-top: 30px;
   flex-wrap: wrap;
 }
+
 .description {
   color: var(--nav-color);
   text-align: justify;
@@ -89,12 +103,14 @@ body {
   line-height: 1.6;
   font-size: 1.2rem;
 }
+
 .icons {
   margin-top: 30px;
   display: flex;
   gap: 10px;
   align-content: center;
 }
+
 .icon-container {
   flex-wrap: wrap;
   text-align: center;
@@ -106,53 +122,107 @@ body {
   transition: 0.3s;
   margin: 0 auto;
 }
+
 .icon-container i {
   color: var(--accent);
   font-size: 1.5rem;
   font-weight: bolder;
 }
+
 .icon-container:hover {
   transform: translateY(-3px);
 }
 .card-container {
-  height: 450px;
-  width: 350px;
-  background-color: var(--bg-main);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in;
-  /* border: 2px solid gold; */
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 620px; /* fixed total card height — adjust to taste */
 }
 
 .card-container:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(26, 92, 42, 0.18);
+  transform: translateY(-6px);
 }
+
 .card-container img {
-  width: 350px;
-  height: 300px;
-  border-radius: 10px;
+  width: 100%;
+  height: 220px; /* fixed image height, never changes */
+  flex-shrink: 0; /* stops the image from getting squeezed by long text */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
+
+.card-container:hover img {
+  transform: scale(1.06);
+}
+
 .card-text {
+  padding: 20px 22px 24px;
   display: flex;
   flex-direction: column;
+  flex: 1; /* fills remaining space after the image */
+  min-height: 0; /* lets children shrink/scroll instead of overflowing */
 }
-.card-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  margin-bottom: 20px;
+
+.heading-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
 }
-.card {
+
+.heading-price p {
+  margin: 0;
+}
+/* .heading-price + p {
+  margin-bottom: 10px;
+} */
+
+.heading-price h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a5c2a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.price-text {
+  font-size: 20px !important;
+  font-weight: 600;
+  font-family: "Playfair Display", Georgia, serif;
+  color: #1a5c2a !important;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.card-text > p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.65;
+  margin: 0;
+}
+.card-text p {
+  margin-bottom: 10px;
+}
+/* .card {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+} */
 
 .special-text {
   color: #209c2c;
 }
+
 .check-container {
   display: flex;
   gap: 50px;
@@ -166,42 +236,51 @@ body {
   margin-top: 10px;
   z-index: 1;
 }
+
 .Icon-container {
   display: flex;
   gap: 20px;
 }
+
 .Icon-container i {
   font-size: 1.5rem;
   color: var(--accent);
 }
+
 .Icon-container p {
   font-size: 0.8rem;
   color: gray;
 }
+
 .room-text h3 {
   color: var(--accent);
+  text-align: center;
 }
+
 .room-text {
   text-align: center;
   width: 400px;
   padding: 80px;
 }
-
+.heading-wraper {
+  display: flex;
+  justify-content: center;
+}
 .room-text h1 {
   font-family: "Playfair Display", serif;
   color: var(--text-dark);
+  text-align: center;
 }
-.card {
-}
+
 .room-text p {
   color: gray;
   font-size: 0.9rem;
-  /* margin-top: 10px;
-  margin-bottom: 0px; */
 }
+
 .hero-image .room-container {
   display: flex;
 }
+
 .viewBtn {
   color: var(--nav-color);
   border: none;
@@ -209,29 +288,30 @@ body {
   font-size: 0.9rem;
   width: 50px;
 }
+
 .price-text {
   font-size: 0.8rem;
   color: gray;
 }
 
-.heading-price {
-  display: flex;
-  gap: 50px;
-}
 .heading-price p {
   margin-top: 7px;
 }
+
 .heading-price h2 {
   font-size: 1.4rem;
   color: var(--nav-color);
 }
+
 .romms-partion {
   display: flex;
-  gap: 200px;
+  gap: 50px;
 }
+
 .gold-icon {
   color: #d4a24c;
 }
+
 .fancy-divider {
   display: flex;
   align-items: center;
@@ -250,16 +330,19 @@ body {
   color: #d4a24c;
   font-size: 14px;
 }
+
 .line {
   width: 80px;
   height: 10px;
   border-radius: 10px;
   color: var(--accent);
 }
+
 .beer-icon {
   color: red;
   font-size: 1rem;
 }
+
 .machine-image {
   width: 950px;
   height: 600px;
@@ -267,6 +350,7 @@ body {
   float: left;
   border-radius: 70px;
 }
+
 .sauna-image {
   width: 950px;
   height: 600px;
@@ -275,12 +359,14 @@ body {
   border-radius: 70px;
   margin-left: 10px;
 }
+
 .brewDescription {
   color: gray;
   font-size: 1.1rem;
   margin-bottom: 20px;
   font-family: "Jost", sans-serif;
 }
+
 .wheatContainer {
   display: flex;
   justify-content: center;
@@ -290,14 +376,17 @@ body {
   background-color: var(--box-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .Wheat-icon {
   color: red;
 }
+
 .beerIcons {
   display: flex;
   justify-content: center;
   gap: 30px;
 }
+
 .text-box {
   background-color: var(--box-color);
   border: 2px solid gold;
@@ -306,23 +395,28 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .text-box p {
   color: var(--nav-color);
 }
+
 .beer-container {
   display: flex;
   gap: 30px;
   margin-top: 100px;
 }
+
 .special-text .sauna-image {
   border-radius: 10px;
 }
+
 .text-box-container {
   display: flex;
   justify-content: space-around;
   transition: all 0.3s ease-out;
   cursor: pointer;
 }
+
 .text-box-container:hover {
   transform: translateY(-2px);
 }
@@ -334,21 +428,25 @@ body {
   margin-top: 10px;
   margin: 0 auto;
 }
+
 .counter-box {
   margin-top: 30px;
   height: 100px;
   width: 100px;
 }
+
 .counter-box h3 {
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
   color: var(--nav-color);
 }
+
 .counter-box p {
   font-size: 0.9rem;
   margin-top: 7px;
   color: var(--accent);
 }
+
 .location-text {
   font-family: "Lato", sans-serif;
   letter-spacing: 4px;
@@ -356,13 +454,16 @@ body {
   text-align: center;
   margin-top: 20px;
 }
+
 .find-text {
   margin-top: -40px;
   font-size: 2rem;
 }
+
 .find-text span {
   color: var(--accent);
 }
+
 .map-box {
   width: 1200px;
   height: 500px;
@@ -370,54 +471,66 @@ body {
   margin: 0 auto;
   border-radius: 10px;
 }
+
 .reach-heading {
   color: white;
 }
+
 .map-partition {
   display: flex;
   justify-content: space-around;
 }
+
 .reach-heading + p {
   color: white;
 }
+
 .location-text p {
   color: white;
 }
+
 .adress-icon {
   gap: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .adress-icon h3 {
   text-align: center;
   margin-bottom: 10px;
 }
+
 .footer-container {
   width: 99vw;
   flex-wrap: wrap;
-  height: 600px;
+  height: auto; /* fixed: was hardcoded 600px, let content define height */
   background-color: #12572e;
   border-radius: 10px;
 }
+
 .footer-box {
   display: flex;
   justify-content: space-between;
 }
+
 .text h1 {
   margin-top: 20px;
   color: white;
   font-family: "Playfair Display", serif;
 }
+
 .text p:first-of-type {
   color: var(--accent);
   font-family: "Playfair Display", serif;
   margin-bottom: 30px;
 }
+
 .text p:nth-of-type(2) {
   color: #a09880;
   font-family: "Jost", sans-serif;
 }
+
 .explore-text h2 {
   margin-top: 20px;
   color: white;
@@ -425,15 +538,18 @@ body {
   margin-bottom: 30px;
   letter-spacing: 0.18em;
 }
+
 .footer-links a {
   text-decoration: none;
   color: #a09880;
 }
+
 .footer-links li {
   margin-top: 15px;
   list-style: none;
   font-family: "Jost", sans-serif;
 }
+
 .contact-section h2 {
   margin-top: 20px;
   color: white;
@@ -441,22 +557,25 @@ body {
   margin-bottom: 30px;
   letter-spacing: 0.18em;
 }
+
 .contact-section h3 {
   color: white;
   margin-bottom: 10px;
   margin-top: 10px;
   font-family: "Jost", sans-serif;
-  /* letter-spacing: 0.13rem; */
 }
+
 .contact-section p {
   color: #a09880;
   font-family: "Jost", sans-serif;
 }
+
 .subscribe-section {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .subscribe-section h2 {
   margin-top: 20px;
   color: white;
@@ -464,6 +583,7 @@ body {
   margin-bottom: 30px;
   letter-spacing: 0.18em;
 }
+
 #subscribe {
   width: 300px;
   padding: 15px 20px;
@@ -476,9 +596,11 @@ body {
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
+
 #subscribe::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
+
 #subscribe:focus {
   background: rgba(255, 255, 255, 0.25);
   box-shadow:
@@ -486,18 +608,22 @@ body {
     0 0 30px rgba(102, 126, 234, 0.5);
   transform: scale(1.02);
 }
+
 .footer-icons {
   display: flex;
   justify-content: space-between;
 }
+
 .footer-icons p {
   color: white;
   font-family: "Jost", sans-serif;
 }
+
 .Inside-footer {
   display: flex;
   gap: 40px;
 }
+
 .footer-container > p {
   color: white;
   font-family: "Jost", sans-serif;

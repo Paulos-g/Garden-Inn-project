@@ -1,78 +1,67 @@
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .bookBtn {
-    display: none;
-  }
-  .icons {
-    flex-wrap: wrap;
-  }
-  .card {
-    gap: 20px;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-  .beer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* ============================================================
+   RESPONSIVE — largest first so smaller ones override cleanly
+   ============================================================ */
 
-  .romms-partion {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+/* Large screens / wide laptops (max 1400px) */
+@media (max-width: 1400px) {
+  .machine-image {
+    height: auto;
+    width: 600px;
   }
-  .hero-image {
-    background-image: url(./assets/garden\ bldg.webp);
-    background-size: cover;
-    background-position: center;
-  }
-  .check-container {
-    height: 80px;
-    max-width: 490px;
+  .sauna-image {
+    height: auto;
+    width: 500px;
   }
   .room-container {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 30px;
+  }
+  .romms-partion {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .map-box {
+    width: 900px;
+    height: auto;
+  }
+  .map-frame iframe {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .footer-box {
+    display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
   }
 }
-/* Small laptops */
 
+/* Tablets / small laptops (max 1024px) */
 @media (max-width: 1024px) {
-  /* .room-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  } */
+  .nav-links {
+    display: none;
+  }
+  .Book-btn {
+    display: none;
+  }
   .hero-image {
     background-image:
       linear-gradient(
         to right,
         rgba(249, 250, 246, 1) 0%,
-        /* 1. Starts solid off-white */ rgba(249, 250, 246, 1) 5%,
-        /* 2. Stays solid to cover the text area */ rgba(249, 250, 246, 0) 65%
-          /* 3. Fades to completely transparent */
+        rgba(249, 250, 246, 1) 5%,
+        rgba(249, 250, 246, 0) 65%
       ),
       url("./assets/garden\ bldg.webp");
     background-size: cover;
     background-position: center;
-  }
-
-  .nav-links {
-    display: none;
-  }
-  .bookBtn {
-    display: none;
   }
   .icons {
     flex-wrap: wrap;
   }
   .card {
     gap: 20px;
-    /* flex-direction: column; */
   }
   .machine-image {
     margin: 0 auto;
@@ -93,10 +82,9 @@
     flex-direction: column;
     align-items: center;
   }
-
   .map-box {
-    width: 650px;
-    height: 900px;
+    width: 100%;
+    height: auto;
   }
   .map-partition {
     flex-direction: column;
@@ -111,42 +99,39 @@
     gap: 30px;
     align-items: center;
   }
-}
-
-@media (max-width: 1400px) {
-  .machine-image {
-    height: auto;
-    width: 600px;
-  }
   .room-container {
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    margin-left: 30px;
   }
-
   .romms-partion {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .map-box {
-    width: 450px;
-    height: 1100px;
-  }
-  .map-frame iframe {
-    width: 400px;
-    margin: 0 auto;
-  }
-  .footer-box {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+  .hero-image {
+    background-image: url(./assets/garden\ bldg.webp);
+    background-size: cover;
+    background-position: center;
+  }
+  .icons {
+    flex-wrap: wrap;
+  }
+  .card {
+    gap: 20px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .beer-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  .footer-container {
-    height: 1500px;
-  }
-  .sauna-image {
-    height: auto;
-    width: 500px;
+  .check-container {
+    height: 80px;
+    max-width: 490px;
   }
 }

@@ -9,7 +9,7 @@ function Check() {
         <Icon icon="fa-solid fa-calendar-days" title="Check in" />
         <Icon icon="fa-solid fa-calendar-check" title="Check out " />
         <Icon icon="fa-regular fa-user" title="Guests" />
-        <Button text="Check Avaliablity" />
+        <Button className="Book-btn" text="Check Avaliablity" />
       </div>
     </div>
   );

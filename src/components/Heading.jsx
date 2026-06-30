@@ -8,11 +8,9 @@ function Heading({ sTitle, bTitle, descrp, type, buttonText, buttonLink }) {
         <h3>{sTitle}</h3>
         <h1>{bTitle}</h1>
         <p>{descrp}</p>
-        <Button text={buttonText} to={buttonLink} />
+        {buttonText && <Button text={buttonText} to={buttonLink} />}
       </div>
-      <div
-        className={type === "hero-image" ? "hero-image" : "content-container"}
-      ></div>
+      {type && <div className={type}></div>}
     </section>
   );
 }
