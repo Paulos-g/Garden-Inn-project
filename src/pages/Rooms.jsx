@@ -13,6 +13,8 @@ import TwinRoomImg from "../assets/Twin_room.jpg";
 import DoubleRoomImg from "../assets/Double_room.jpg";
 import Service from "../components/ServicesIcons";
 import Cta from "../components/Cta";
+import Footer from "../components/Footer";
+
 function Room() {
   useEffect(() => {
     AOS.init({
@@ -142,6 +144,9 @@ function Room() {
         </div>
       </div>
       <Cta />
+      <div data-aos="fade-up">
+        <Footer />
+      </div>{" "}
     </div>
   );
 }
