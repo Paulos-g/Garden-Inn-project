@@ -98,6 +98,36 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .nav-cont {
+    padding: 12px 15px;
+    border-radius: 8px;
+  }
+
+  .nav-list {
+    gap: 15px !important;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .nav-cont {
+    padding: 10px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-list {
+    gap: 10px !important;
+    flex-wrap: wrap;
+  }
+
+  .nav-list li a {
+    font-size: 0.9rem;
+  }
+}
+
 /* list layout */
 .nav-list {
   display: flex;

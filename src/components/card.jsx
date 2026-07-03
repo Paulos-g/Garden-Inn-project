@@ -18,6 +18,7 @@ function Card(props) {
 
         <p>{props.text}</p>
         {props.buttonText && <Button text={props.buttonText} />}
+
         <hr style={{ border: "1px solid #b8860b", margin: "16px 0" }} />
         <h2 className="price-text">{props.price}</h2>
         <hr style={{ border: "1px solid #b8860b", margin: "16px 0" }} />
