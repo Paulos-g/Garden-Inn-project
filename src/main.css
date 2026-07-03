@@ -518,6 +518,84 @@ body {
   gap: 30px;
 }
 
+/* Booking CTA section */
+.booking-cta {
+  background: linear-gradient(
+    90deg,
+    rgba(16, 66, 38, 1) 0%,
+    rgba(19, 80, 46, 1) 100%
+  );
+  color: #fff;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 36px 48px;
+}
+.booking-cta__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.booking-cta__label {
+  color: #d4a24c;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px 0;
+  font-family: "Jost", sans-serif;
+}
+.booking-cta__title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin: 0 0 6px 0;
+  color: #fff;
+}
+.booking-cta__text {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+}
+.booking-cta__actions {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+.cta-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-out;
+}
+.cta-btn:hover {
+  scale: 1.05;
+}
+.cta-btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.cta-btn--primary {
+  background: #d4a24c;
+  color: #1b4332;
+}
+
+@media (max-width: 800px) {
+  .booking-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .booking-cta__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+/* cta end */
+
 .text-box {
   background-color: var(--box-color);
   border: 2px solid gold;

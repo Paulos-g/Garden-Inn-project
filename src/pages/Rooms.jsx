@@ -12,6 +12,7 @@ import SingleRoomImg from "../assets/Single_room.webp";
 import TwinRoomImg from "../assets/Twin_room.jpg";
 import DoubleRoomImg from "../assets/Double_room.jpg";
 import Service from "../components/ServicesIcons";
+import Cta from "../components/Cta";
 function Room() {
   useEffect(() => {
     AOS.init({
@@ -36,13 +37,15 @@ function Room() {
           buttonText="Book Now"
         />
       </div>
-      <Header text="Choose Your Room" />
-      <Fancy />
-      <p className="brewDescription" style={{ textAlign: "center" }}>
-        Every room is a carefully considered retreat. Browse our collection and
-        find the <br /> perfect space for your stay.
-      </p>
-      <RoomNav />
+      <div data-aos="fade-up">
+        <Header text="Choose Your Room" />
+        <Fancy />
+        <p className="brewDescription" style={{ textAlign: "center" }}>
+          Every room is a carefully considered retreat. Browse our collection
+          and find the <br /> perfect space for your stay.
+        </p>
+        <RoomNav />
+      </div>
       <div
         style={{
           display: "grid",
@@ -117,9 +120,9 @@ function Room() {
             description="Complimentary daily breakfast"
           />
           <Service
-            icon="fa-solid fa-shuttle-space"
+            icon="fa-solid fa-van-shuttle"
             title="Airport shuttle"
-            description="Free airport transportation service"
+            description="Complimentary 24/7 transfers to Bole Airport."
           />
           <Service
             icon="fa-solid fa-leaf"
@@ -138,6 +141,7 @@ function Room() {
           />
         </div>
       </div>
+      <Cta />
     </div>
   );
 }
