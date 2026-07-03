@@ -11,6 +11,7 @@ import Card from "../components/card";
 import SingleRoomImg from "../assets/Single_room.webp";
 import TwinRoomImg from "../assets/Twin_room.jpg";
 import DoubleRoomImg from "../assets/Double_room.jpg";
+import Service from "../components/ServicesIcons";
 function Room() {
   useEffect(() => {
     AOS.init({
@@ -53,18 +54,20 @@ function Room() {
           padding: "0 20px",
         }}
       >
-        <Card
-          ImgUrl={DoubleRoomImg}
-          badge="MOST POPULAR"
-          P="KING-SIZED LUXURY"
-          heading="Double Room"
-          text="Sophisticated king-sized sanctuary with premium linens, a rain shower, and sweeping garden views. Perfect for couples seeking refined comfort."
-          roomSize="32 m²"
-          guests="2 guests"
-          amenities={["King Bed", "Rain Shower", "Garden View", "Mini Bar"]}
-          buttonText="Book Now"
-          price="$150 / night"
-        />
+        <div data-aos="fade-right">
+          <Card
+            ImgUrl={DoubleRoomImg}
+            badge="MOST POPULAR"
+            P="KING-SIZED LUXURY"
+            heading="Double Room"
+            text="Sophisticated king-sized sanctuary with premium linens, a rain shower, and sweeping garden views. Perfect for couples seeking refined comfort."
+            roomSize="32 m²"
+            guests="2 guests"
+            amenities={["King Bed", "Rain Shower", "Garden View", "Mini Bar"]}
+            buttonText="Book Now"
+            price="$150 / night"
+          />
+        </div>
         <Card
           ImgUrl={TwinRoomImg}
           P="FLEXIBLE COMFORT"
@@ -76,25 +79,64 @@ function Room() {
           buttonText="Book Now"
           price="$120 / night"
         />
-        <Card
-          ImgUrl={SingleRoomImg}
-          badge="BEST VALUE"
-          P="EFFICIENT ELEGANCE"
-          heading="Single Room"
-          text="Elegant single room with a plush single bed and premium linens, everything you need, nothing you don't, designed for the solo traveler."
-          roomSize="22 m²"
-          guests="1 guests"
-          amenities={[
-            "Single Bed",
-            "Work Desk",
-            "Courtyard View",
-            "Coffee Maker",
-            "43' Tv",
-            "buuuu",
-          ]}
-          buttonText="Book Now"
-          price="$100 / night"
-        />
+        <div data-aos="fade-left">
+          <Card
+            ImgUrl={SingleRoomImg}
+            badge="BEST VALUE"
+            P="EFFICIENT ELEGANCE"
+            heading="Single Room"
+            text="Elegant single room with a plush single bed and premium linens, everything you need, nothing you don't, designed for the solo traveler."
+            roomSize="22 m²"
+            guests="1 guests"
+            amenities={[
+              "Single Bed",
+              "Work Desk",
+              "Courtyard View",
+              "Coffee Maker",
+              "43' Tv",
+              "buuuu",
+            ]}
+            startPrice="Starting from"
+            buttonText="Book Now"
+            price="$100 / night"
+          />
+        </div>
+      </div>
+      <Header sText="THE GARDEN INN PROMISE" text="Every Stay Includes" />
+      <Fancy />
+      <div data-aos="fade-up">
+        <div className="icons">
+          <Service
+            icon="fa-solid fa-wifi"
+            title="High speed internet"
+            description="Ultra-fast WiFi throughout the hotel"
+          />
+          <Service
+            icon="fa-solid fa-plate-wheat"
+            title="Breakfast"
+            description="Complimentary daily breakfast"
+          />
+          <Service
+            icon="fa-solid fa-shuttle-space"
+            title="Airport shuttle"
+            description="Free airport transportation service"
+          />
+          <Service
+            icon="fa-solid fa-leaf"
+            title="Eco certified"
+            description="Environmentally responsible practices"
+          />
+          <Service
+            icon="fa-solid fa-lock"
+            title="Fully secured"
+            description="24/7 security & surveillance"
+          />
+          <Service
+            icon="fa-solid fa-spa"
+            title="Sauna & spa"
+            description="Access to premium wellness facilities"
+          />
+        </div>
       </div>
     </div>
   );

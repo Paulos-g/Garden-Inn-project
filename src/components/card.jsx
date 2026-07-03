@@ -52,7 +52,9 @@ function Card(props) {
 
         <div className="card-footer">
           <div className="price-section">
-            <p className="starting-from">Starting from</p>
+            {props.startPrice && (
+              <p className="starting-from">{props.startPrice}</p>
+            )}
             <h3 className="price-text">{props.price}</h3>
           </div>
           {props.buttonText && <Button text={props.buttonText} />}
