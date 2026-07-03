@@ -7,6 +7,10 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Fancy from "../components/FancyIcon";
 import RoomNav from "../components/RoomNav";
+import Card from "../components/card";
+import SingleRoomImg from "../assets/Single_room.webp";
+import TwinRoomImg from "../assets/Twin_room.jpg";
+import DoubleRoomImg from "../assets/Double_room.jpg";
 function Room() {
   useEffect(() => {
     AOS.init({
@@ -38,6 +42,60 @@ function Room() {
         find the <br /> perfect space for your stay.
       </p>
       <RoomNav />
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+          justifyContent: "center",
+          gap: "30px",
+          margin: "40px auto",
+          maxWidth: "1400px",
+          padding: "0 20px",
+        }}
+      >
+        <Card
+          ImgUrl={DoubleRoomImg}
+          badge="MOST POPULAR"
+          P="KING-SIZED LUXURY"
+          heading="Double Room"
+          text="Sophisticated king-sized sanctuary with premium linens, a rain shower, and sweeping garden views. Perfect for couples seeking refined comfort."
+          roomSize="32 m²"
+          guests="2 guests"
+          amenities={["King Bed", "Rain Shower", "Garden View", "Mini Bar"]}
+          buttonText="Book Now"
+          price="$150 / night"
+        />
+        <Card
+          ImgUrl={TwinRoomImg}
+          P="FLEXIBLE COMFORT"
+          heading="Twin Room"
+          text="Well-appointed twin room with two premium single beds, ideal for friends or colleagues. Quality bedding and thoughtful amenities throughout."
+          roomSize="28 m²"
+          guests="2 guests"
+          amenities={["2 Single Beds", "Desk", "City View", "Coffee Maker"]}
+          buttonText="Book Now"
+          price="$120 / night"
+        />
+        <Card
+          ImgUrl={SingleRoomImg}
+          badge="BEST VALUE"
+          P="EFFICIENT ELEGANCE"
+          heading="Single Room"
+          text="Elegant single room with a plush single bed and premium linens, everything you need, nothing you don't, designed for the solo traveler."
+          roomSize="22 m²"
+          guests="1 guests"
+          amenities={[
+            "Single Bed",
+            "Work Desk",
+            "Courtyard View",
+            "Coffee Maker",
+            "43' Tv",
+            "buuuu",
+          ]}
+          buttonText="Book Now"
+          price="$100 / night"
+        />
+      </div>
     </div>
   );
 }
