@@ -4,6 +4,7 @@ import Heading from "../components/Heading";
 import Nav from "../components/nav-bar";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useState } from "react";
 import { useEffect } from "react";
 import Fancy from "../components/FancyIcon";
 import RoomNav from "../components/RoomNav";
@@ -14,6 +15,7 @@ import DoubleRoomImg from "../assets/Double_room.jpg";
 import Service from "../components/ServicesIcons";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
+import rooms from "../components/Room_Description";
 
 function Room() {
   useEffect(() => {
@@ -22,6 +24,12 @@ function Room() {
       once: true,
     });
   }, []);
+  const [category, setCategory] = useState("All");
+
+  const filteredRooms =
+    category === "All"
+      ? rooms
+      : rooms.filter((room) => room.category === category);
   return (
     <div>
       <Nav />
@@ -46,7 +54,7 @@ function Room() {
           Every room is a carefully considered retreat. Browse our collection
           and find the <br /> perfect space for your stay.
         </p>
-        <RoomNav />
+        <RoomNav setCategory={setCategory} />
       </div>
       <div
         style={{
@@ -60,51 +68,58 @@ function Room() {
         }}
       >
         <div data-aos="fade-right">
-          <Card
-            ImgUrl={DoubleRoomImg}
-            badge="MOST POPULAR"
-            P="KING-SIZED LUXURY"
-            heading="Double Room"
-            text="Sophisticated king-sized sanctuary with premium linens, a rain shower, and sweeping garden views. Perfect for couples seeking refined comfort."
-            roomSize="32 m²"
-            guests="2 guests"
-            amenities={["King Bed", "Rain Shower", "Garden View", "Mini Bar"]}
-            buttonText="Book Now"
-            price="$150 / night"
-          />
+          {filteredRooms.map((room) => (
+            <Card
+              ImgUrl={DoubleRoomImg}
+              badge="MOST POPULAR"
+              P="KING-SIZED LUXURY"
+              heading={room.title}
+              description={room.description}
+              roomSize="32 m²"
+              guests="2 guests"
+              amenities={["King Bed", "Rain Shower", "Garden View", "Mini Bar"]}
+              buttonText="Book Now"
+              price="$150 / night"
+            />
+          ))}
         </div>
-        <Card
-          ImgUrl={TwinRoomImg}
-          P="FLEXIBLE COMFORT"
-          heading="Twin Room"
-          text="Well-appointed twin room with two premium single beds, ideal for friends or colleagues. Quality bedding and thoughtful amenities throughout."
-          roomSize="28 m²"
-          guests="2 guests"
-          amenities={["2 Single Beds", "Desk", "City View", "Coffee Maker"]}
-          buttonText="Book Now"
-          price="$120 / night"
-        />
-        <div data-aos="fade-left">
+        {filteredRooms.map((room) => (
           <Card
-            ImgUrl={SingleRoomImg}
-            badge="BEST VALUE"
-            P="EFFICIENT ELEGANCE"
-            heading="Single Room"
-            text="Elegant single room with a plush single bed and premium linens, everything you need, nothing you don't, designed for the solo traveler."
-            roomSize="22 m²"
-            guests="1 guests"
-            amenities={[
-              "Single Bed",
-              "Work Desk",
-              "Courtyard View",
-              "Coffee Maker",
-              "43' Tv",
-              "buuuu",
-            ]}
-            startPrice="Starting from"
+            ImgUrl={TwinRoomImg}
+            P="FLEXIBLE COMFORT"
+            heading={room.title}
+            description={room.description}
+            roomSize="28 m²"
+            guests="2 guests"
+            amenities={["2 Single Beds", "Desk", "City View", "Coffee Maker"]}
             buttonText="Book Now"
-            price="$100 / night"
+            price="$120 / night"
           />
+        ))}
+
+        <div data-aos="fade-left">
+          {filteredRooms.map((room) => (
+            <Card
+              ImgUrl={SingleRoomImg}
+              badge="BEST VALUE"
+              P="EFFICIENT ELEGANCE"
+              heading={room.title}
+              description={room.description}
+              roomSize="22 m²"
+              guests="1 guests"
+              amenities={[
+                "Single Bed",
+                "Work Desk",
+                "Courtyard View",
+                "Coffee Maker",
+                "43' Tv",
+                "buuuu",
+              ]}
+              startPrice="Starting from"
+              buttonText="Book Now"
+              price="$100 / night"
+            />
+          ))}
         </div>
       </div>
       <Header sText="THE GARDEN INN PROMISE" text="Every Stay Includes" />

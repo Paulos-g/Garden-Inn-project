@@ -28,7 +28,7 @@ function Card(props) {
           <h2>{props.heading}</h2>
         </div>
 
-        <p className="card-description">{props.text}</p>
+        <p className="card-description">{props.description}</p>
 
         {props.amenities && props.amenities.length > 0 && (
           <div className="amenities-section">

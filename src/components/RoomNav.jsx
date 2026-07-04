@@ -1,28 +1,52 @@
 import React from "react";
 
-function RoomNav() {
+function RoomNav({ setCategory }) {
   return (
     <div className="nav-cont">
       <ul className="nav-list">
         <li>
-          <a className="active" href="#">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setCategory("All");
+            }}
+          >
             All
           </a>
         </li>
         <li>
-          <a href="#">Single</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setCategory("Single");
+            }}
+          >
+            Single
+          </a>
         </li>
         <li>
-          <a href="#">Twin</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setCategory("Twin");
+            }}
+          >
+            Twin
+          </a>
         </li>
         <li>
-          <a href="#">Double</a>
-        </li>
-        <li>
-          <a href="#">Suite</a>
-        </li>
-        <li>
-          <a href="#">Family</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setCategory("Double");
+            }}
+          >
+            Double
+          </a>
         </li>
       </ul>
     </div>
