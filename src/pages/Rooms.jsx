@@ -24,10 +24,10 @@ function Room() {
       once: true,
     });
   }, []);
-  const [catagory, setCatagory] = useState("All");
+  const [category, setCategory] = useState("All");
 
   const filteredRooms =
-    catagory === "All" ? room : room.filter((p) => p.catagory === catagory);
+    category === "All" ? room : room.filter((p) => p.category === category);
   return (
     <div>
       <Nav />
@@ -52,7 +52,7 @@ function Room() {
           Every room is a carefully considered retreat. Browse our collection
           and find the <br /> perfect space for your stay.
         </p>
-        <RoomNav setCatagory={setCatagory} />
+        <RoomNav setCategory={setCategory} />
       </div>
       <div
         style={{
