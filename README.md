@@ -1,7 +1,15 @@
-🌿 Garden INN Hotels
+# 🌿 Garden INN Hotels
 
-A modern, responsive hotel booking website built to provide guests with a seamless experience when exploring rooms, checking amenities, and making reservations.
+A modern and responsive hotel booking website built with React and Vite. Garden INN Hotels provides an elegant and user-friendly platform for guests to explore rooms, view amenities, and discover the perfect stay.
 
-📖 Overview
+---
 
-Garden INN Hotels is a user-friendly hotel booking platform designed with a clean and intuitive interface. The application showcases available rooms, hotel facilities, pricing, and room details while offering a smooth browsing experience across desktop and mobile devices.
+## 📖 Overview
+
+Garden INN Hotels is a hotel booking website focused on delivering a clean, intuitive, and responsive user experience. Users can browse different room types, explore hotel amenities, check room pricing, and learn more about the services offered.
+
+This project was built to practice modern frontend development using React while following responsive design principles and reusable component architecture.
+
+---
+
+
