@@ -20,7 +20,7 @@ function Nav() {
             <Link to="/rooms">Rooms</Link>
           </li>
           <li>
-            <a href="#Services">Services</a>
+            <Link to="/Services">Services</Link>s
           </li>
           <li>
             <a href="#Nearby Attractions">Nearby Attractions</a>
