@@ -7,12 +7,14 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Fancy from "../components/FancyIcon";
 import ServiceCard from "../components/ServiceCard";
+import SuggestionCard from "../components/SuggestionCard";
 import SaunaImg from "../assets/sauna.jpg";
 import BreweryImg from "../assets/BarImage.jpg";
 import RestaurantImg from "../assets/restaurant.jpg";
 import AirportImg from "../assets/reception.png";
 import WifiImg from "../assets/machineimage.png";
-
+import Cta from "../components/Cta";
+import Footer from "../components/Footer";
 function OurService() {
   const [selectedService, setSelectedService] = useState(0);
 
@@ -170,7 +172,6 @@ function OurService() {
           Garden <br /> Inn. Click any service to highlight it.
         </p>
       </div>
-
       <div data-aos="fade-up" style={{ marginTop: "60px" }}>
         <div
           style={{
@@ -201,6 +202,49 @@ function OurService() {
             </div>
           ))}
         </div>
+      </div>
+      <Header
+        style={{ marginTop: "20px" }}
+        sText="Guest Voices"
+        text="What Our Guests Say"
+      />
+      <Fancy />
+      <div
+        data-aos="fade-up"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "30px",
+          maxWidth: "1200px",
+          margin: "60px auto",
+          padding: "0 20px",
+        }}
+      >
+        <SuggestionCard
+          rating={5}
+          quote="The sauna and spa experience was unlike anything I've had at a hotel. Pure indulgence — I booked an extra night just to go back."
+          guestName="Miriam T."
+          guestLocation="Nairobi"
+          serviceBadge="Sauna & Spa"
+        />
+        <SuggestionCard
+          rating={5}
+          quote="Garden Brau is the real deal. We did the brewery tour and the tasting — the head brewer knows his craft. The seasonal ale was outstanding."
+          guestName="James O."
+          guestLocation="London"
+          serviceBadge="Garden Brau"
+        />
+        <SuggestionCard
+          rating={5}
+          quote="Shuttle was waiting at arrivals before I even got my bags. The driver tracked my delayed flight and still got there first. Impressive."
+          guestName="Asel K."
+          guestLocation="Dubai"
+          serviceBadge="Airport Shuttle"
+        />
+      </div>
+      <Cta />
+      <div data-aos="fade-up">
+        <Footer />
       </div>
     </div>
   );
