@@ -10,6 +10,7 @@ import ServiceCard from "../components/ServiceCard";
 import SuggestionCard from "../components/SuggestionCard";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
+import RoomNav from "../components/RoomNav";
 function NearbyAttraction() {
   useEffect(() => {
     AOS.init({
@@ -17,6 +18,8 @@ function NearbyAttraction() {
       once: true,
     });
   }, []);
+
+  const [catagory, setCategory] = useState("All");
   return (
     <div>
       <Nav />
@@ -46,6 +49,14 @@ function NearbyAttraction() {
         shopping malls to the best coffee in Africa — Bole Medhanialem has it
         all.
       </p>
+      <RoomNav
+        firstT="All"
+        secondT="Landmarks"
+        thirdT="Shopping Malls"
+        fourthT="Supermarkets"
+        fifthT="Dining"
+        sixthF="Beauty Salon"
+      />
     </div>
   );
 }

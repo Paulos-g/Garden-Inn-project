@@ -25,6 +25,9 @@ function Room() {
     });
   }, []);
   const [category, setCategory] = useState("All");
+  const twinRoom = "Twin";
+  const doubleRoom = "Double";
+  const singgleRoom = "Single";
 
   const filteredRooms =
     category === "All" ? room : room.filter((p) => p.category === category);
@@ -52,7 +55,16 @@ function Room() {
           Every room is a carefully considered retreat. Browse our collection
           and find the <br /> perfect space for your stay.
         </p>
-        <RoomNav setCategory={setCategory} />
+        <RoomNav
+          setCategory={setCategory}
+          twin={twinRoom}
+          double={doubleRoom}
+          single={singgleRoom}
+          firstT="All"
+          secondT="Single"
+          thirdT="Twin"
+          fourthT="Double"
+        />
       </div>
       <div
         style={{

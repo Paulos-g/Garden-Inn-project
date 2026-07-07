@@ -1,6 +1,17 @@
 import React from "react";
 
-function RoomNav({ setCategory }) {
+function RoomNav({
+  setCategory,
+  twin,
+  double,
+  single,
+  firstT,
+  secondT,
+  thirdT,
+  fourthT,
+  fifthT,
+  sixthF,
+}) {
   return (
     <div className="nav-cont">
       <ul className="nav-list">
@@ -12,7 +23,7 @@ function RoomNav({ setCategory }) {
               setCategory("All");
             }}
           >
-            All
+            {firstT}
           </a>
         </li>
         <li>
@@ -20,10 +31,10 @@ function RoomNav({ setCategory }) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setCategory("Single");
+              setCategory(single);
             }}
           >
-            Single
+            {secondT}
           </a>
         </li>
         <li>
@@ -31,10 +42,10 @@ function RoomNav({ setCategory }) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setCategory("Twin");
+              setCategory(twin);
             }}
           >
-            Twin
+            {thirdT}
           </a>
         </li>
         <li>
@@ -42,10 +53,10 @@ function RoomNav({ setCategory }) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setCategory("Double");
+              setCategory(double);
             }}
           >
-            Double
+            {fourthT}
           </a>
         </li>
       </ul>
