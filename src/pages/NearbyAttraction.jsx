@@ -17,6 +17,17 @@ function NearbyAttraction() {
       once: true,
     });
   }, []);
-  return <div></div>;
+  return;
+  <div>
+    <Nav />
+    <Heading
+      type="content-container"
+      sTitle="Garden Inn · Bole Medhanialem"
+      bTitle="Explore What's Around You"
+      descrp="Bole Medhanialem is one of Addis Ababa's most vibrant
+       neighbourhoods — malls, markets, cafés, cultural landmarks
+        and the international airport, all within walking distance."
+    />
+  </div>;
 }
 export default NearbyAttraction;
