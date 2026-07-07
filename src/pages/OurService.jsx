@@ -204,7 +204,7 @@ function OurService() {
         </div>
       </div>
       <Header
-        style={{ marginTop: "20px" }}
+        style={{ marginTop: "80px" }}
         sText="Guest Voices"
         text="What Our Guests Say"
       />

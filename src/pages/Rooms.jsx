@@ -33,7 +33,7 @@ function Room() {
       <Nav />
       <div data-aos="fade-up">
         <Heading
-          sTitle="GARDEN INN ADDIS ABABA"
+          sTitle="Garden Inn · Addis Ababa"
           bTitle="Rooms & Suits Designed for You"
           descrp={
             <>
