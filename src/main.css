@@ -276,6 +276,42 @@ body {
   margin: 0;
 }
 
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0 0;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #8a5a1c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.meta-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #f2ad74;
+  display: inline-block;
+}
+
+.card-tips {
+  background: #edf7ec;
+  border-left: 4px solid #6c9f5b;
+  color: #3a5b36;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .amenities-section {
   display: flex;
   flex-direction: column;

@@ -11,6 +11,8 @@ import SuggestionCard from "../components/SuggestionCard";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
 import RoomNav from "../components/RoomNav";
+import places from "../components/NearbyDescription";
+import Card from "../components/card";
 function NearbyAttraction() {
   useEffect(() => {
     AOS.init({
@@ -19,7 +21,12 @@ function NearbyAttraction() {
     });
   }, []);
 
-  const [catagory, setCategory] = useState("All");
+  const [category, setCategory] = useState("All");
+  const filteredPlaces =
+    category === "All"
+      ? places
+      : places.filter((place) => place.category === category);
+
   return (
     <div>
       <Nav />
@@ -50,6 +57,7 @@ function NearbyAttraction() {
         all.
       </p>
       <RoomNav
+        setCategory={setCategory}
         firstT="All"
         secondT="Landmarks"
         thirdT="Shopping Malls"
@@ -57,6 +65,36 @@ function NearbyAttraction() {
         fifthT="Dining"
         sixthF="Beauty Salon"
       />
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+          justifyContent: "center",
+          gap: "30px",
+          margin: "40px auto",
+          maxWidth: "1400px",
+          padding: "0 20px",
+        }}
+      >
+        {filteredPlaces.map((places, index) => (
+          <div
+            key={places.id}
+            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+          >
+            <Card
+              ImgUrl={places.image}
+              badge={places.tag}
+              P={places.category}
+              heading={places.name}
+              description={places.description}
+              roomSize={places.roomSize}
+              tips={places.tips}
+              info1={places.distance}
+              info2={places.distanceNum}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

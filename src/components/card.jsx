@@ -28,7 +28,15 @@ function Card(props) {
           <h2>{props.heading}</h2>
         </div>
 
+        {(props.info1 || props.info2) && (
+          <div className="card-meta">
+            {props.info1 && <span className="meta-item">{props.info1}</span>}
+            {props.info2 && <span className="meta-item">{props.info2}</span>}
+          </div>
+        )}
+
         <p className="card-description">{props.description}</p>
+        {props.tips && <p className="card-tips">{props.tips}</p>}
 
         {props.amenities && props.amenities.length > 0 && (
           <div className="amenities-section">

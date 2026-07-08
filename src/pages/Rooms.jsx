@@ -137,7 +137,7 @@ function Room() {
       <Cta />
       <div data-aos="fade-up">
         <Footer />
-      </div>{" "}
+      </div>
     </div>
   );
 }

@@ -16,6 +16,7 @@ const places = [
       "One of Addis Ababa's most iconic Orthodox churches, featuring stunning Ethiopian architecture, intricate frescoes and a serene courtyard — a must-visit spiritual landmark steps from the hotel.",
     tips: "Visit on Sunday morning for the full ceremonial experience.",
   },
+
   {
     id: 2,
     category: "landmark",
@@ -41,7 +42,7 @@ const places = [
     distance: "350 m · 4 min walk",
     distanceNum: 0.35,
     tag: "Shopping Mall",
-    tagColor: C.darkGreen,
+    tagColor: "#0f6e56",
     icon: "fa-solid fa-bag-shopping",
     hours: "Daily 8am – 10pm",
     image:
@@ -57,7 +58,7 @@ const places = [
     distance: "250 m · 3 min walk",
     distanceNum: 0.25,
     tag: "Shopping Mall",
-    tagColor: C.darkGreen,
+    tagColor: "#0f6e56",
     icon: "fa-solid fa-store",
     hours: "Daily 8am – 10pm",
     image:
@@ -73,7 +74,7 @@ const places = [
     distance: "400 m · 5 min walk",
     distanceNum: 0.4,
     tag: "Shopping Mall",
-    tagColor: C.darkGreen,
+    tagColor: "#0f6e56",
     icon: "fa-solid fa-building",
     hours: "Daily 9am – 10pm",
     image:
@@ -89,7 +90,7 @@ const places = [
     distance: "150 m · 2 min walk",
     distanceNum: 0.15,
     tag: "Shopping Mall",
-    tagColor: C.darkGreen,
+    tagColor: "#0f6e56",
     icon: "fa-solid fa-shop",
     hours: "Daily 8am – 10pm",
     image:
@@ -233,3 +234,4 @@ const places = [
     tips: "Great for designer Ethiopian fashion labels — pick up a handwoven habesha kemis.",
   },
 ];
+export default places;

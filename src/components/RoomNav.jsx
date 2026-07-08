@@ -31,7 +31,7 @@ function RoomNav({
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setCategory(single);
+              setCategory(single ? single : "landmark");
             }}
           >
             {secondT}
@@ -42,7 +42,7 @@ function RoomNav({
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setCategory(twin);
+              setCategory(twin ? twin : "mall");
             }}
           >
             {thirdT}
@@ -53,12 +53,38 @@ function RoomNav({
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setCategory(double);
+              setCategory(double ? double : "super");
             }}
           >
             {fourthT}
           </a>
         </li>
+        {fifthT && (
+          <li>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setCategory("dining");
+              }}
+            >
+              {fifthT}
+            </a>
+          </li>
+        )}
+        {sixthF && (
+          <li>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setCategory("beauty");
+              }}
+            >
+              {sixthF}
+            </a>
+          </li>
+        )}
       </ul>
     </div>
   );
