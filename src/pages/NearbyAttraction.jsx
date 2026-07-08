@@ -13,6 +13,8 @@ import Footer from "../components/Footer";
 import RoomNav from "../components/RoomNav";
 import places from "../components/NearbyDescription";
 import Card from "../components/card";
+import Map from "../components/map";
+import Address from "../components/Adress";
 function NearbyAttraction() {
   useEffect(() => {
     AOS.init({
@@ -84,7 +86,7 @@ function NearbyAttraction() {
             <Card
               ImgUrl={places.image}
               badge={places.tag}
-              P={places.category}
+              // P={places.category}
               heading={places.name}
               description={places.description}
               roomSize={places.roomSize}
@@ -94,6 +96,40 @@ function NearbyAttraction() {
             />
           </div>
         ))}
+      </div>
+      <Header sText="Find Us" text="We're Right in the Heart of It" />
+      <Fancy />
+      <div data-aos="fade-up">
+        <div className="map-box">
+          <div className="map-partition">
+            <Map />
+            <div className="location-text">
+              <Header text="How to reach Us" className="reach-heading" />
+              <hr style={{ border: "1px solid #b8860b", margin: "16px 0" }} />
+              <Address
+                Heading="Address"
+                Icon="fa-solid fa-location-dot"
+                Area="Bole Avenue Behind Edna Mall"
+                street="8th street, Rwanda"
+                Country="ADDIS ABABA, ETHIOPIA"
+              />
+              <Address
+                Heading="Opening Hours"
+                Icon="fa-solid fa-clock"
+                Area=" Restaurant |Mon-Fri 24Hrs 7am-11pm| "
+                street="Brewery |Sat-Sun 24Hrs  11am-6pm| "
+              />
+            </div>
+          </div>
+        </div>
+        <Cta
+          sTitle="Your Base Camp in Bole"
+          bTitle="Stay at Garden Inn & Explore Everything"
+          descrp="    The perfect location in Addis Ababa
+           — walk to malls, churches and restaurants, with
+            the airport just 1 km away and our free shuttle
+             always on standby."
+        />
       </div>
     </div>
   );

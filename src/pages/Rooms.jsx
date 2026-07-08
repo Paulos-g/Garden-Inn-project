@@ -134,7 +134,12 @@ function Room() {
           />
         </div>
       </div>
-      <Cta />
+      <Cta
+        sTitle="LIMITED AVAILABILITY"
+        bTitle="Ready to Book Your Stay?"
+        descrp="    Our team is available 24/7 to help you find the perfect room.
+          Reservations can also be made by phone."
+      />
       <div data-aos="fade-up">
         <Footer />
       </div>
