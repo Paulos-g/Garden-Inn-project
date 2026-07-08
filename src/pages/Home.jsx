@@ -77,7 +77,12 @@ function Home() {
             {" "}
             <Heading
               sTitle="Our Rooms"
-              bTitle={<>Rooms & Suites Designed for You</>}
+              bTitle={
+                <>
+                  Rooms & <br />
+                  Suites Designed <br /> for You
+                </>
+              }
               descrp="From cozy rooms to spacious suites, every space is crafted for your comfort and relaxation."
             />
           </div>
