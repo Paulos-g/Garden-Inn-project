@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Room from "./pages/Rooms";
 import OurService from "./pages/OurService";
 import NearbyAttraction from "./pages/NearbyAttraction";
+import Restaurant from "./pages/Restaurant";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/rooms" element={<Room />} />
         <Route path="/Services" element={<OurService />} />
         <Route path="/Nearby" element={<NearbyAttraction />} />
+        <Route path="/Restaurant" element={<Restaurant />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

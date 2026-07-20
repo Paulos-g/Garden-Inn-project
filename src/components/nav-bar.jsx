@@ -26,7 +26,7 @@ function Nav() {
             <Link to="/Nearby">Nearby Attractions</Link>
           </li>
           <li>
-            <a href="#Restaurant Service">Restaurant Service</a>
+            <Link to="/Restaurant">Restaurant Service</Link>
           </li>
           <li>
             <a href="#Garden-Brau">Garden Brau</a>
