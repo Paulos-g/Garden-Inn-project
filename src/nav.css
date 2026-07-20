@@ -166,3 +166,152 @@ body {
 }
 
 /* right side (you can use later for Sort dropdown) */
+
+/* ─── Hamburger icon ─────────────────────────────────── */
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  color: var(--nav-color);
+  cursor: pointer;
+  z-index: 1100;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+.hamburger:hover {
+  background: rgba(52, 103, 57, 0.1);
+}
+
+/* ─── Dark overlay behind drawer ─────────────────────── */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 1050;
+  transition: background 0.35s ease;
+}
+.nav-overlay.active {
+  display: block;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Mobile Drawer ──────────────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 280px;
+  background: linear-gradient(160deg, #12572e 0%, #1b4332 100%);
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.25);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* ─── Mobile nav list ────────────────────────────────── */
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ─── Each nav item — slide + fade in with stagger ───── */
+@keyframes slideInItem {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-nav-item {
+  opacity: 0;
+}
+.mobile-menu.open .mobile-nav-item {
+  animation: slideInItem 0.4s ease forwards;
+  animation-delay: calc(var(--i) * 0.07s + 0.15s);
+}
+
+.mobile-nav-item a,
+.mobile-nav-item .btn,
+.mobile-nav-item button {
+  display: block;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.mobile-nav-item a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Underline accent on each item */
+.mobile-nav-item a::before {
+  content: "→";
+  margin-right: 10px;
+  color: #d4a24c;
+  font-size: 0.85rem;
+}
+
+/* ─── Book Now button inside drawer ─────────────────── */
+.mobile-book-btn {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.mobile-book-btn .bookBtn,
+.mobile-book-btn button {
+  width: 100%;
+  text-align: center;
+  background: #d4af37 !important;
+  color: #12572e !important;
+  font-weight: 700;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 14px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.mobile-book-btn .bookBtn:hover,
+.mobile-book-btn button:hover {
+  background: #f0c040 !important;
+  transform: scale(1.03);
+}
+
+/* ─── Show hamburger + hide desktop links on mobile ─── */
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none; /* use mobile drawer instead */
+  }
+
+  .Nav-container .Book-btn,
+  .Nav-container .bookBtn {
+    display: none;
+  }
+}
