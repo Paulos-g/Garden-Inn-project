@@ -1,10 +1,8 @@
 import express from "express";
+import { roomController } from "../Controllers/roomController.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.sendStatus(200);
-  console.log("Api working succesfully");
-});
+router.get("/", roomController);
 
 export default router;
