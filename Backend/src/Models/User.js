@@ -1,12 +1,8 @@
 // models/User.js
-import mongoose  from "mongoose";
-
-// 1.create a schema 
-// 2.Model based on the schema u created 
-
-const Userschema = new mongoose.Schema({
-   
 import mongoose from "mongoose";
+
+// 1.create a schema
+// 2.Model based on the schema u created
 
 const userSchema = new mongoose.Schema(
   {
@@ -15,7 +11,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
       minlength: 2,
-      maxlength: 50
+      maxlength: 50,
     },
 
     lastName: {
@@ -23,39 +19,34 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
       minlength: 2,
-      maxlength: 50
+      maxlength: 50,
     },
-
     email: {
       type: String,
       required: true,
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
     },
 
     phone: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
-
     password: {
       type: String,
       required: true,
-      minlength: 8
+      minlength: 8,
     },
-
     role: {
       type: String,
       enum: ["guest", "admin", "staff"],
-      default: "guest"
-    }
+      default: "guest",
+    },
   },
-  {
-    timestamps: true
-  }
-)
+  { timestamps: true },
+);
+const User = mongoose.model("User", userSchema);
 
-    
-})
+export default user;
