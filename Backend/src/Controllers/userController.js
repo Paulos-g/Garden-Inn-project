@@ -3,7 +3,7 @@ import User from "../Models/User.js";
 
 export const getUsers = async (req, res) => {
   try {
-    const users = await User.find().select("-password");
+    const users = await User.find().select("-password").sort({ createdAt: -1 }); // it showes the newest first by making -1.
 
     res.status(200).json(users);
   } catch (error) {
