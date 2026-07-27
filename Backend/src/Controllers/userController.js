@@ -1,5 +1,6 @@
 import express from "express";
 import User from "../Models/User.js";
+import bcrypt from "bcrypt";
 
 export const getUsers = async (req, res) => {
   try {
@@ -29,13 +30,16 @@ export const getUserById = async (req, res) => {
 export const registerUser = async (req, res) => {
   try {
     const { firstName, lastName, email, phone, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = new User({
       firstName,
       lastName,
       email,
       phone,
-      password,
+      password: hashedPassword,
     });
+
     await newUser.save();
     res.status(201).json({
       message: "User registered successfully",
