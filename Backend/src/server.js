@@ -13,13 +13,16 @@ const app = express();
 
 connectDB();
 
+// Middleware that allows the express backend to read the json sent by the frontend used for registration form
+app.use(express.json());
+
 const PORT = process.env.PORT;
 
 app.use("/api/rooms", roomRoutes);
-app.use("/api/userform", userRoute);
+app.use("/api/user", userRoute);
 
 app.get("/", (req, res) => {
-  console.log("HEllo from backend", req.method);
+  console.log("Hello from backend", req.method);
   res.sendStatus(201);
 });
 

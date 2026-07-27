@@ -1,5 +1,73 @@
 import express from "express";
+import User from "../Models/User.js";
 
-export const userController = (req, res) => {
-  res.send("<h1>This is user Form fill it out properly<h1/>");
+export const getUsers = async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error in the controller:", error);
+
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+
+export const getUserById = async (req, res) => {
+  try {
+    const theUser = await User.findById(req.params.id);
+    if (!theUser) return res.status(404).json({ message: "User Not Found!!!" });
+    res.json(theUser);
+  } catch (error) {
+    res.json({ Error: "Server Error" });
+    console.error("Error", error);
+  }
+};
+
+export const registerUser = async (req, res) => {
+  try {
+    const { firstName, lastName, email, phone, password } = req.body;
+    const newUser = new User({
+      firstName,
+      lastName,
+      email,
+      phone,
+      password,
+    });
+    await newUser.save();
+    res.status(201).json({
+      message: "User registered successfully",
+      user: newUser,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "INTERNAL SERVER ERROR", error: error.message });
+  }
+};
+
+export const updateUser = async (req, res) => {
+  try {
+    const { firstName, lastName, phone, password } = req.body;
+    await User.findByIdAndUpdate(req.params.id, {
+      firstName,
+      lastName,
+      phone,
+      password,
+    });
+    res.status(200).json({ message: "UPDATED SUCCESFULLY" });
+  } catch (error) {
+    console.error("Error happend: ", error);
+  }
+};
+
+export const deletUser = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "DELETED SUCCESFULLY" });
+  } catch (error) {
+    console.error("Error happend: ", error);
+  }
 };
