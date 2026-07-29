@@ -16,6 +16,10 @@ const serviceSchema = new mongoose.Schema(
       required: true,
       min: 1,
     },
+    date: {
+      type: Date,
+      required: true,
+    },
   },
   {
     timestamps: true,
