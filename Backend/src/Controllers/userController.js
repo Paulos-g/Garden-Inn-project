@@ -1,6 +1,7 @@
 import express from "express";
 import User from "../Models/User.js";
 import bcrypt from "bcrypt";
+import { generateToken } from "../config/jwt.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -30,6 +31,13 @@ export const getUserById = async (req, res) => {
 export const registerUser = async (req, res) => {
   try {
     const { firstName, lastName, email, phone, password } = req.body;
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(400).json({
+        message: "Email already exists",
+      });
+    }
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
@@ -41,6 +49,7 @@ export const registerUser = async (req, res) => {
     });
 
     await newUser.save();
+    const token = generateToken(newUser._id);
     res.status(201).json({
       message: "User registered successfully",
       user: newUser,
