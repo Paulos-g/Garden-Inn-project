@@ -8,3 +8,5 @@ JWT token valid?
   ├── No → 401 Unauthorized
   └── Yes → Continue  */
 // this is the main middleware
+import express from "express";
+import jwt from "jsonwebtoken";

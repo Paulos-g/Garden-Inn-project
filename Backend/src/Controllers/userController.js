@@ -31,7 +31,7 @@ export const getUserById = async (req, res) => {
 export const registerUser = async (req, res) => {
   try {
     const { firstName, lastName, email, phone, password } = req.body;
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email }); // checks if email already exists in db
 
     if (existingUser) {
       return res.status(400).json({
@@ -50,6 +50,11 @@ export const registerUser = async (req, res) => {
 
     await newUser.save();
     const token = generateToken(newUser._id);
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+    });
     res.status(201).json({
       message: "User registered successfully",
       user: newUser,
@@ -58,6 +63,25 @@ export const registerUser = async (req, res) => {
     res
       .status(500)
       .json({ message: "INTERNAL SERVER ERROR", error: error.message });
+  }
+};
+
+export const loginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      res.status(401).json({ message: "All feilds are required" });
+
+      const userExists = await User.findOne({ email });
+      if (!email || !(await user.matchPassword(password))) {
+        return;
+        res.status(401).json({ message: "Invalid Creditentials" });
+      }
+      res.status(200).json({ message: "LOGGED IN SUCCESFULLY" });
+    }
+  } catch (error) {
+    console.error("ERROR", error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
