@@ -8,10 +8,11 @@ import {
   loginUser,
 } from "../Controllers/userController.js";
 import { protect } from "../Middleware/authMiddleware.js";
+import { isAdmin } from "../Middleware/isAdminMiddleware.js";
 const router = express.Router();
 
-router.get("/", getUsers);
-router.get("/:id", getUserById);
+router.get("/", protect, isAdmin, getUsers);
+router.get("/:id", protect, isAdmin, getUserById);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.put("/:id", updateUser);

@@ -53,9 +53,13 @@ export const registerUser = async (req, res) => {
     });
 
     await newUser.save();
-    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRETE, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+      { id: newUser._id, role: newUser.role },
+      process.env.JWT_SECRETE,
+      {
+        expiresIn: "1d",
+      },
+    );
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
@@ -105,9 +109,13 @@ export const loginUser = async (req, res) => {
     //   res.status(401).json({ message: "Invalid Creditentials" });
     // }
 
-    const token = jwt.sign({ id: userExists._id }, process.env.JWT_SECRETE, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+      { id: userExists._id, role: newUser.role },
+      process.env.JWT_SECRETE,
+      {
+        expiresIn: "1d",
+      },
+    );
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
@@ -132,7 +140,7 @@ export const loginUser = async (req, res) => {
 export const logOutUser = async (req, res) => {
   try {
     res.clearCookie("token", {
-      httpOnly: true,
+      httpOnly: true, //that cookie gets stored by the browser itself, automatically,
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
     });
