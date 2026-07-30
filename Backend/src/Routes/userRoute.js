@@ -7,6 +7,7 @@ import {
   getUserById,
   loginUser,
 } from "../Controllers/userController.js";
+import { protect } from "../Middleware/authMiddleware.js";
 const router = express.Router();
 
 router.get("/", getUsers);
