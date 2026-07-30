@@ -1,7 +1,10 @@
 import express from "express";
 import User from "../Models/User.js";
 import bcrypt from "bcrypt";
-import { generateToken } from "../config/jwt.js";
+import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
+
+dotenv.config(); // to make the env key work here
 
 export const getUsers = async (req, res) => {
   try {
@@ -19,12 +22,13 @@ export const getUsers = async (req, res) => {
 
 export const getUserById = async (req, res) => {
   try {
-    const theUser = await User.findById(req.params.id);
+    const theUser = await User.findById(req.params.id).select("-password");
     if (!theUser) return res.status(404).json({ message: "User Not Found!!!" });
     res.json(theUser);
   } catch (error) {
-    res.json({ Error: "Server Error" });
-    console.error("Error", error);
+    res.status(500).json({
+      message: "Server Error",
+    });
   }
 };
 
@@ -49,39 +53,94 @@ export const registerUser = async (req, res) => {
     });
 
     await newUser.save();
-    const token = generateToken(newUser._id);
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRETE, {
+      expiresIn: "1d",
+    });
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+      maxAge: 24 * 60 * 60 * 1000,
     });
     res.status(201).json({
       message: "User registered successfully",
-      user: newUser,
+      user: {
+        id: newUser._id,
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+        phone: newUser.phone,
+      },
     });
   } catch (error) {
     res
       .status(500)
-      .json({ message: "INTERNAL SERVER ERROR", error: error.message });
+      .json({ message: "REGISTERING ERROR", error: error.message });
   }
 };
 
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    if (!email || !password) {
-      res.status(401).json({ message: "All feilds are required" });
 
-      const userExists = await User.findOne({ email });
-      if (!email || !(await user.matchPassword(password))) {
-        return;
-        res.status(401).json({ message: "Invalid Creditentials" });
-      }
-      res.status(200).json({ message: "LOGGED IN SUCCESFULLY" });
+    if (!email || !password) {
+      return res.status(401).json({ message: "All fields are required" });
     }
+
+    const userExists = await User.findOne({ email });
+    if (!userExists) {
+      return res.status(401).json({
+        message: "User not found",
+      });
+    }
+
+    const isMatch = await bcrypt.compare(password, userExists.password);
+    if (!isMatch) {
+      return res.status(401).json({
+        message: "Incorrect password",
+      });
+    }
+    // if (!email || !(await bcrypt.compare(password))) {
+    //   return;
+    //   res.status(401).json({ message: "Invalid Creditentials" });
+    // }
+
+    const token = jwt.sign({ id: userExists._id }, process.env.JWT_SECRETE, {
+      expiresIn: "1d",
+    });
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+    res.status(200).json({
+      message: "Logged in successfully",
+      user: {
+        id: userExists._id,
+        firstName: userExists.firstName,
+        lastName: userExists.lastName,
+        email: userExists.email,
+      },
+    });
   } catch (error) {
     console.error("ERROR", error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "LOGIN ERROR" });
+  }
+};
+
+export const logOutUser = async (req, res) => {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+    });
+    res.status(200).json({
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    res.status(500).json({ message: "LOGOUT ERROR" });
   }
 };
 

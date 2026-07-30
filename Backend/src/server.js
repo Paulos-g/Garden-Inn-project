@@ -14,15 +14,16 @@ dotenv.config(); // to make the env key work here
 setServers(["1.1.1.1", "8.8.8.8"]); // used because the DNS resolver of windows is unable to resolve the mongodb domain.
 
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  }),
-);
+
 // Middleware that allows the express backend to read the json sent by the frontend used for registration form
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+  cors({
+    credentials: true,
+  }),
+);
+
 connectDB();
 
 const PORT = process.env.PORT;
