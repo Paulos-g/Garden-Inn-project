@@ -1,8 +1,8 @@
 import express from "express";
-import roomRoutes from "./Routes/roomRoutes.js";
 import userRoute from "./Routes/userRoute.js";
 import bookingRoute from "./Routes/bookingRoute.js";
 import serviceRoute from "./Routes/serviceRoute.js";
+import restaurantRoute from "./Routes/restaurantRoute.js";
 import connectDB from "./config/db.js";
 import { setServers } from "node:dns/promises";
 import dotenv from "dotenv";
@@ -28,10 +28,10 @@ connectDB();
 
 const PORT = process.env.PORT;
 
-// app.use("/api/rooms", roomRoutes);
 app.use("/api/user", userRoute);
 app.use("/api/book", bookingRoute);
 app.use("/api/service", serviceRoute);
+app.use("/api/tables", restaurantRoute);
 
 app.get("/", (req, res) => {
   console.log("Hello from backend", req.method);

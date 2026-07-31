@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import User from "./User";
 
 const restaurantSchema = new mongoose.Schema({
   user: {
@@ -8,12 +7,12 @@ const restaurantSchema = new mongoose.Schema({
   },
   tableNo: {
     type: Number,
-    required,
+    required: true,
   },
   guestNo: {
     type: Number,
     min: 1,
-    required,
+    required: true,
   },
   date: {
     type: Date,
@@ -21,5 +20,5 @@ const restaurantSchema = new mongoose.Schema({
   },
 });
 
-const Restaurant = mongoose.Model("Restaurant", restaurantSchema);
+const Restaurant = mongoose.model("Restaurant", restaurantSchema);
 export default Restaurant;
