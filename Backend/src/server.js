@@ -23,7 +23,7 @@ app.use(
     credentials: true,
   }),
 );
-
+app.use(rateLimiter);
 connectDB();
 
 const PORT = process.env.PORT;
