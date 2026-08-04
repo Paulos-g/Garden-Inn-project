@@ -35,14 +35,18 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:8383/api/user/register", {
-        firstName,
-        lastName,
-        email,
-        phone,
-        password,
-        confirmPassword,
-      });
+      await axios.post(
+        "http://localhost:8383/api/user/register",
+        {
+          firstName,
+          lastName,
+          email,
+          phone,
+          password,
+          confirmPassword,
+        },
+        { withCredentials: true },
+      );
       navigate("/");
     } catch (error) {
       console.error("ERROR creating user", error);
