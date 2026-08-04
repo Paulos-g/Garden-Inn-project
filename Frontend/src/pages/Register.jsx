@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import Nav from "../components/nav-bar";
 import Footer from "../components/Footer";
 import "../register.css";
-import axios from "axios";
+import api from "../lib/axios";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -35,8 +35,8 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post(
-        "http://localhost:8383/api/user/register",
+      await api.post(
+        "/user/register",
         {
           firstName,
           lastName,
