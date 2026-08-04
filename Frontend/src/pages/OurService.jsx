@@ -15,17 +15,46 @@ import AirportImg from "../assets/reception.png";
 import WifiImg from "../assets/machineimage.png";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
+import api from "../lib/axios";
+import { useNavigate } from "react-router-dom";
+
 function OurService() {
   const [selectedService, setSelectedService] = useState(0); // to display the UI
-  const [service, setService] = useState(""); // to send the selected servvice to the DB
-  const [guestNo,setGuestNo] = useState("");
-  const [date, setDate] = useState(""); 
+  const [serviceName, setService] = useState(""); // to send the selected servvice to the DB
+  const [date, setDate] = useState("");
+  const [guest, setGuestNo] = useState("");
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     AOS.init({
       duration: 800,
       once: true,
     });
   }, []);
+  const navigate = useNavigate();
+
+  const handleService = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    try {
+      await api.post(
+        "/service/post",
+        {
+          serviceName,
+          guest,
+          date,
+        },
+        { withCredentials: true },
+      );
+      navigate("/");
+    } catch (error) {
+      alert("Cannot creat service please try again later ");
+
+      console.error("ERROR", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const services = [
     {
@@ -244,13 +273,18 @@ function OurService() {
           serviceBadge="Airport Shuttle"
         />
       </div>
-      <form action="POST">
-        {" "}
+      <form onSubmit={handleService}>
         <div className="form-container">
           <h2>Reserve a Service</h2>
 
           <label>Service</label>
-          <select name="service" className="form-input">
+          <select
+            name="service"
+            className="form-input"
+            value={serviceName}
+            required
+            onChange={(e) => setService(e.target.value)}
+          >
             <option value="">Select Service</option>
             <option value="Spa">Spa</option>
             <option value="Sauna">Sauna</option>
@@ -262,13 +296,25 @@ function OurService() {
             type="number"
             name="guests"
             placeholder="Enter number of guests"
+            value={guest}
+            required
             className="form-input"
+            onChange={(e) => setGuestNo(e.target.value)}
           />
 
           <label>Date</label>
-          <input type="date" name="date" className="form-input" />
+          <input
+            type="date"
+            name="date"
+            className="form-input"
+            value={date}
+            required
+            onChange={(e) => setDate(e.target.value)}
+          />
 
-          <button className="submit-btn">Reserve</button>
+          <button className="submit-btn">
+            {loading ? "Reserving Service..." : "Reserve"}
+          </button>
         </div>
       </form>
 
