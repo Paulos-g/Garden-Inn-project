@@ -4,8 +4,11 @@ import Footer from "../components/Footer";
 import "./Restaurant.css";
 import Heading from "../components/Heading";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
+import { useNavigate } from "react-router-dom";
+import api from "../lib/axios";
+import toast from "react-hot-toast";
 
 function Restaurant() {
   useEffect(() => {
@@ -14,6 +17,39 @@ function Restaurant() {
       once: true,
     });
   }, []);
+
+  const [tableNo, setTableNo] = useState("");
+  const [guestNo, setGuestNo] = useState("");
+  const [date, setDate] = useState("");
+  const [loading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleReservation = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await api.post(
+        "/tables/reserve",
+        {
+          tableNo,
+          guestNo,
+          date,
+        },
+        {
+          withCredentials: true,
+        },
+      );
+      toast.success("Table reserved successfully!");
+      navigate("/");
+    } catch (error) {
+      toast.error("Cannot reserve table.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const menuItems = {
     breakfast: [
       {
@@ -238,15 +274,27 @@ function Restaurant() {
         {/* Venues Section */}
         <section className="venues-section">
           <div className="venues-container">
-            <div className="venue-card terrace" data-aos="zoom-in" data-aos-delay="100">
+            <div
+              className="venue-card terrace"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
               <h3>The Garden Terrace</h3>
               <p>Al fresco dining amid lush greenery</p>
             </div>
-            <div className="venue-card private" data-aos="zoom-in" data-aos-delay="200">
+            <div
+              className="venue-card private"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               <h3>Private Dining</h3>
               <p>Up to 12 guests</p>
             </div>
-            <div className="venue-card bar" data-aos="zoom-in" data-aos-delay="300">
+            <div
+              className="venue-card bar"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
               <h3>The Bar</h3>
               <p>Craft drinks & Brau</p>
             </div>
@@ -254,71 +302,56 @@ function Restaurant() {
         </section>
 
         {/* Reservations Section */}
-        <section className="reservations-section">
-          <div className="reservation-heading" data-aos="fade-up">
-            <p className="reservation-subtitle">RESERVATIONS</p>
-            <h2 className="reservation-title">Book your table</h2>
-          </div>
-          <div className="reservation-form-container" data-aos="fade-up" data-aos-delay="200">
-            <form className="reservation-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label>FULL NAME</label>
-                  <input type="text" placeholder="Abebe Kebede" />
-                </div>
-                <div className="form-group">
-                  <label>PHONE</label>
-                  <input type="text" placeholder="+251 9_ _ _ _ _ _" />
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label>DATE</label>
-                  <input type="date" placeholder="mm/dd/yyyy" />
-                </div>
-                <div className="form-group">
-                  <label>TIME</label>
-                  <select>
-                    <option>7:00 AM</option>
-                    <option>8:00 AM</option>
-                    <option>9:00 AM</option>
-                    <option>12:00 PM</option>
-                    <option>1:00 PM</option>
-                    <option>6:00 PM</option>
-                    <option>7:00 PM</option>
-                  </select>
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label>GUESTS</label>
-                  <select>
-                    <option>1 guest</option>
-                    <option>2 guests</option>
-                    <option>3 guests</option>
-                    <option>4 guests</option>
-                    <option>5+ guests</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label>OCCASION</label>
-                  <select>
-                    <option>Regular dining</option>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                    <option>Business</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" className="btn-confirm">
-                Confirm Reservation
-              </button>
-              <p className="form-footer-text">
-                We'll confirm your booking via phone within 30 minutes.
-              </p>
-            </form>
-          </div>
-        </section>
+        <div className="table-container">
+          <form className="table-form" onSubmit={handleReservation}>
+            <h2>Reserve a Table</h2>
+            <p>Reserve your dining experience in just a few steps.</p>
+
+            <div className="form-group">
+              <label>Table Number</label>
+              <select
+                name="tableNo"
+                value={tableNo}
+                onChange={(e) => setTableNo(e.target.value)}
+                required
+              >
+                <option value="">Select Table</option>
+                {[101, 201, 301, 401, 501, 601].map((table) => (
+                  <option key={table} value={table}>
+                    Table {table}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>Number of Guests</label>
+              <input
+                type="number"
+                name="guestNo"
+                min="1"
+                max="20"
+                placeholder="Enter guests"
+                value={guestNo}
+                onChange={(e) => setGuestNo(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Reservation Date</label>
+              <input
+                type="date"
+                name="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+              />
+            </div>
+
+            <button type="submit">Reserve Table</button>
+          </form>
+        </div>
       </div>
       <Footer />
     </>

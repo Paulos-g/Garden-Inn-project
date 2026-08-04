@@ -7,9 +7,11 @@ import OurService from "./pages/OurService";
 import NearbyAttraction from "./pages/NearbyAttraction";
 import Restaurant from "./pages/Restaurant";
 import Register from "./pages/Register";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <Toaster position="top-right" />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
