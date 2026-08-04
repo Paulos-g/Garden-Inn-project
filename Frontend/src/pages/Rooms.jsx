@@ -46,6 +46,9 @@ function Room() {
           }
           type="content-container"
           buttonText="Book Now"
+          buttonLink="/rooms"
+          secondaryButtonText="Create Account"
+          secondaryButtonLink="/register"
         />
       </div>
       <div data-aos="fade-up">

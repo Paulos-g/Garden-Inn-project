@@ -88,6 +88,36 @@ body {
 .bookBtn:hover {
   background-color: #3b8e23;
 }
+
+.Nav-container .Book-btn,
+.Nav-container .bookBtn {
+  width: auto;
+  min-width: 170px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #12572e 0%, #1f7a43 100%);
+  color: #fff;
+  border: 2px solid #d4af37;
+  font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 22px rgba(18, 87, 46, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.Nav-container .Book-btn:hover,
+.Nav-container .bookBtn:hover {
+  background: linear-gradient(135deg, #1f7a43 0%, #2d8f50 100%);
+  transform: translateY(-2px);
+}
+
 .nav-cont {
   display: flex;
   justify-content: center;
@@ -258,7 +288,10 @@ body {
   letter-spacing: 0.03em;
   padding: 12px 16px;
   border-radius: 10px;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 .mobile-nav-item a:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -292,7 +325,9 @@ body {
   padding: 14px 20px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 .mobile-book-btn .bookBtn:hover,
 .mobile-book-btn button:hover {

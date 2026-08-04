@@ -16,8 +16,10 @@ import WifiImg from "../assets/machineimage.png";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
 function OurService() {
-  const [selectedService, setSelectedService] = useState(0);
-
+  const [selectedService, setSelectedService] = useState(0); // to display the UI
+  const [service, setService] = useState(""); // to send the selected servvice to the DB
+  const [guestNo,setGuestNo] = useState("");
+  const [date, setDate] = useState(""); 
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -242,6 +244,34 @@ function OurService() {
           serviceBadge="Airport Shuttle"
         />
       </div>
+      <form action="POST">
+        {" "}
+        <div className="form-container">
+          <h2>Reserve a Service</h2>
+
+          <label>Service</label>
+          <select name="service" className="form-input">
+            <option value="">Select Service</option>
+            <option value="Spa">Spa</option>
+            <option value="Sauna">Sauna</option>
+            <option value="Gym">Gym</option>
+          </select>
+
+          <label>Number of Guests</label>
+          <input
+            type="number"
+            name="guests"
+            placeholder="Enter number of guests"
+            className="form-input"
+          />
+
+          <label>Date</label>
+          <input type="date" name="date" className="form-input" />
+
+          <button className="submit-btn">Reserve</button>
+        </div>
+      </form>
+
       <Cta
         sTitle="LIMITED AVAILABILITY"
         bTitle="Ready to Book Your Stay?"
