@@ -35,7 +35,6 @@ function Nav() {
         <a href="/" className="logo">
           <GardenImage imgUrl={GardenInnLogo} />
         </a>
-
         {/* Desktop links */}
         <ul className="nav-links">
           {navItems.map((item, i) =>
@@ -47,14 +46,17 @@ function Nav() {
               <li key={i}>
                 <a href={item.to}>{item.label}</a>
               </li>
-            )
+            ),
           )}
         </ul>
-
-        <Button className="Book-btn" text="BOOK NOW" />
-
+        <Button className="Book-btn" text="Register" buttonLink="/register" />{" "}
+        <Button className="Book-btn" text="Login" />
         {/* Hamburger icon — visible on mobile */}
-        <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+        <div
+          className="hamburger"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
         </div>
       </div>
@@ -63,11 +65,7 @@ function Nav() {
       <div className={isOpen ? "mobile-menu open" : "mobile-menu"}>
         <ul className="mobile-nav-links">
           {navItems.map((item, i) => (
-            <li
-              key={i}
-              className="mobile-nav-item"
-              style={{ "--i": i }}
-            >
+            <li key={i} className="mobile-nav-item" style={{ "--i": i }}>
               {item.type === "link" ? (
                 <Link to={item.to} onClick={closeMenu}>
                   {item.label}
@@ -79,8 +77,16 @@ function Nav() {
               )}
             </li>
           ))}
-          <li className="mobile-nav-item mobile-book-btn" style={{ "--i": navItems.length }}>
-            <Button text="BOOK NOW" />
+          <li
+            className="mobile-nav-item mobile-book-btn"
+            style={{ "--i": navItems.length }}
+          >
+            <Button
+              className="Book-btn"
+              text="Register"
+              buttonLink="/register"
+            />
+            <Button className="Book-btn" text="Login" />{" "}
           </li>
         </ul>
       </div>
