@@ -48,9 +48,10 @@ const Register = () => {
         { withCredentials: true },
       );
       navigate("/");
+      toast.success("Created account successfully!");
     } catch (error) {
       console.error("ERROR creating user", error);
-      alert("Cannot creat account please try again later ");
+      toast.error("Invalid creditentials");
     } finally {
       setLoading(false);
     }

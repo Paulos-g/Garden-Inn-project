@@ -12,7 +12,7 @@ import LogIn from "./pages/Login";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Toaster position="top-right" />
+    <Toaster position="top-center" autoClose={5000} />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />

@@ -17,6 +17,7 @@ import Cta from "../components/Cta";
 import Footer from "../components/Footer";
 import api from "../lib/axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function OurService() {
   const [selectedService, setSelectedService] = useState(0); // to display the UI
@@ -47,8 +48,9 @@ function OurService() {
         { withCredentials: true },
       );
       navigate("/");
+      toast.success("Service Booked succesfully");
     } catch (error) {
-      alert("Cannot creat service please try again later ");
+      toast.error("Cannot book service");
 
       console.error("ERROR", error);
     } finally {

@@ -19,6 +19,7 @@ import room from "../components/Room_Description";
 import { Form } from "react-router-dom";
 import api from "../lib/axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Room() {
   useEffect(() => {
@@ -59,7 +60,9 @@ function Room() {
         },
       );
       navigate("/");
+      toast.success("Room booked succesfully!!!");
     } catch (error) {
+      toast.error("Cannot book room At the moment");
       console.error("Error", error);
     } finally {
       setLoading(false);
