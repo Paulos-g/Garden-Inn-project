@@ -50,7 +50,7 @@ function Nav() {
           )}
         </ul>
         <Button className="Book-btn" text="Register" buttonLink="/register" />{" "}
-        <Button className="Book-btn" text="Login" />
+        <Button className="Book-btn" text="Login" buttonLink="/login" />
         {/* Hamburger icon — visible on mobile */}
         <div
           className="hamburger"
@@ -86,7 +86,7 @@ function Nav() {
               text="Register"
               buttonLink="/register"
             />
-            <Button className="Book-btn" text="Login" />{" "}
+            <Button className="Book-btn" text="Login" buttonLink="/login" />
           </li>
         </ul>
       </div>

@@ -8,6 +8,7 @@ import NearbyAttraction from "./pages/NearbyAttraction";
 import Restaurant from "./pages/Restaurant";
 import Register from "./pages/Register";
 import { Toaster } from "react-hot-toast";
+import LogIn from "./pages/Login";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Nearby" element={<NearbyAttraction />} />
         <Route path="/Restaurant" element={<Restaurant />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
