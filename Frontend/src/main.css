@@ -1205,3 +1205,109 @@ button:hover {
 button:active {
   transform: scale(0.98);
 }
+.booking-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #fcfbf8 0%, #f7efe2 100%);
+  padding: 20px;
+}
+
+.booking-form {
+  width: min(100%, 760px);
+  margin: 40px auto 70px;
+  padding: clamp(24px, 4vw, 36px);
+  background: linear-gradient(145deg, #fffdf9 0%, #f8efe0 100%);
+  border: 1px solid rgba(200, 155, 60, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(24, 24, 24, 0.08);
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #3d2c1f;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #6b4c2f;
+  font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select {
+  padding: 13px 15px;
+  border: 1px solid rgba(96, 73, 40, 0.2);
+  border-radius: 12px;
+  font-size: 0.98rem;
+  outline: none;
+  transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.85);
+  color: #2f261e;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #c89b3c;
+  box-shadow: 0 0 0 4px rgba(200, 155, 60, 0.15);
+  background: #fff;
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #c89b3c 0%, #a7721f 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 8px;
+}
+
+.booking-form button:hover {
+  background: linear-gradient(135deg, #b4872d 0%, #8d5f17 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(168, 114, 31, 0.2);
+}
+
+.booking-form button:active {
+  transform: scale(0.98);
+}
+
+@media (min-width: 768px) {
+  .booking-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+    align-items: start;
+  }
+
+  .booking-form h2,
+  .booking-form button {
+    grid-column: 1 / -1;
+  }
+
+  .booking-form h2 {
+    margin-bottom: 6px;
+  }
+
+  .booking-form .input-group {
+    margin-bottom: 0;
+  }
+}

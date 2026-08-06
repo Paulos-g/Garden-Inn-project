@@ -16,6 +16,9 @@ import Service from "../components/ServicesIcons";
 import Cta from "../components/Cta";
 import Footer from "../components/Footer";
 import room from "../components/Room_Description";
+import { Form } from "react-router-dom";
+import api from "../lib/axios";
+import { useNavigate } from "react-router-dom";
 
 function Room() {
   useEffect(() => {
@@ -24,10 +27,44 @@ function Room() {
       once: true,
     });
   }, []);
+
+  const navigate = useNavigate();
   const [category, setCategory] = useState("All");
+  const [roomName, setRoomName] = useState("");
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [guests, setGuests] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const twinRoom = "Twin";
   const doubleRoom = "Double";
   const singgleRoom = "Single";
+
+  const handleRoom = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await api.post(
+        "/book/booking",
+        {
+          roomName,
+          checkIn,
+          checkOut,
+          guests,
+        },
+
+        {
+          withCredentials: true,
+        },
+      );
+      navigate("/");
+    } catch (error) {
+      console.error("Error", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const filteredRooms =
     category === "All" ? room : room.filter((p) => p.category === category);
@@ -137,6 +174,62 @@ function Room() {
           />
         </div>
       </div>
+      <form className="booking-form" onSubmit={handleRoom}>
+        <h2>Book Your Room</h2>
+
+        <div className="input-group">
+          <label>Room Type</label>
+          <select
+            name="roomName"
+            value={roomName}
+            onChange={(e) => setRoomName(e.target.value)}
+            required
+          >
+            <option value="">Select Room</option>
+            <option value="Single Room">Single Room</option>
+            <option value="Deluxe Room">Deluxe Room</option>
+            <option value="Suite">Suite</option>
+            <option value="Family Room">Family Room</option>
+          </select>
+        </div>
+
+        <div className="input-group">
+          <label>Check In</label>
+          <input
+            type="date"
+            name="checkIn"
+            value={checkIn}
+            onChange={(e) => setCheckIn(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="input-group">
+          <label>Check Out</label>
+          <input
+            type="date"
+            name="checkOut"
+            value={checkOut}
+            onChange={(e) => setCheckOut(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="input-group">
+          <label>Guests</label>
+          <input
+            type="number"
+            name="guests"
+            min="1"
+            max="10"
+            value={guests}
+            onChange={(e) => setGuests(e.target.value)}
+            required
+          />
+        </div>
+
+        <button type="submit">{loading ? "Booking..." : "Book now"}</button>
+      </form>
       <Cta
         sTitle="LIMITED AVAILABILITY"
         bTitle="Ready to Book Your Stay?"
