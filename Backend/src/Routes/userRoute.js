@@ -7,7 +7,7 @@ import {
   getUserById,
   loginUser,
 } from "../Controllers/userController.js";
-import { protect } from "../Middleware/authMiddleware.js";
+import { protect } from "../Middleware/authMiddleWare.js";
 import { isAdmin } from "../Middleware/isAdminMiddleware.js";
 const router = express.Router();
 
