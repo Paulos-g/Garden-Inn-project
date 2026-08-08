@@ -16,14 +16,15 @@ setServers(["1.1.1.1", "8.8.8.8"]); // used because the DNS resolver of windows 
 const app = express();
 
 // Middleware that allows the express backend to read the json sent by the frontend used for registration form
-app.use(express.json());
-app.use(cookieParser());
 app.use(
   cors({
+    origin: "http://localhost:5173",
     credentials: true,
   }),
 );
-app.use(rateLimiter);
+app.use(express.json());
+app.use(cookieParser());
+
 connectDB();
 
 const PORT = process.env.PORT;

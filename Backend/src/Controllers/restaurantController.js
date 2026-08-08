@@ -13,7 +13,12 @@ export const getRestaurant = async (req, res) => {
 export const reserveTable = async (req, res) => {
   try {
     const { tableNo, guestNo, date } = req.body;
-    const Reserve = new Restaurant({ tableNo, guestNo, date });
+    const Reserve = new Restaurant({
+      user: req.user.id,
+      tableNo,
+      guestNo,
+      date,
+    });
     await Reserve.save();
 
     res.status(200).json({ message: "Reserved Table succesfully" });

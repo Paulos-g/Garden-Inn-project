@@ -14,6 +14,7 @@ export const postService = async (req, res) => {
   try {
     const { serviceName, guest, date } = req.body;
     const newService = new Service({
+      user: req.user.id,
       serviceName,
       guest,
       date,

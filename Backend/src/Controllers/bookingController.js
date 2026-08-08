@@ -16,7 +16,13 @@ export const getBooking = async (req, res) => {
 export const createBooking = async (req, res) => {
   try {
     const { roomName, checkIn, checkOut, guests } = req.body;
-    const newBooking = new Booking({ roomName, checkIn, checkOut, guests });
+    const newBooking = new Booking({
+      user: req.user.id,
+      roomName,
+      checkIn,
+      checkOut,
+      guests,
+    });
     await newBooking.save();
     res.status(200).json({ message: "Booked Succesfully" });
   } catch (error) {
