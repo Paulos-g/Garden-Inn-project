@@ -11,14 +11,30 @@ import cookieParser from "cookie-parser";
 
 dotenv.config(); // to make the env key work here
 
-setServers(["1.1.1.1", "8.8.8.8"]); // used because the DNS resolver of windows is unable to resolve the mongodb domain.
+try {
+  setServers(["1.1.1.1", "8.8.8.8"]); // used because the DNS resolver of windows is unable to resolve the mongodb domain.
+} catch (err) {
+  console.warn("DNS setServers warning:", err.message);
+}
 
 const app = express();
+
+const allowedOrigins = [
+  "https://garden-inn-project.vercel.app",
+  "http://localhost:5173",
+  "http://localhost:3000",
+];
 
 // Middleware that allows the express backend to read the json sent by the frontend used for registration form
 app.use(
   cors({
-    origin: "https://garden-inn-project.vercel.app",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   }),
 );
