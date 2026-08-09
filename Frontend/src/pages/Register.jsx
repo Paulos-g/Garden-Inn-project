@@ -6,7 +6,7 @@ import Nav from "../components/nav-bar";
 import Footer from "../components/Footer";
 import "../register.css";
 import api from "../lib/axios";
-
+import { toast } from "react-toastify";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
