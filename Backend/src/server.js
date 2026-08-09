@@ -18,7 +18,7 @@ const app = express();
 // Middleware that allows the express backend to read the json sent by the frontend used for registration form
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://garden-inn-project.vercel.app/",
     credentials: true,
   }),
 );

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8383/api",
+  baseURL: import.meta.env.API_URL,
+  withCredentials: true,
 });
 export default api;
